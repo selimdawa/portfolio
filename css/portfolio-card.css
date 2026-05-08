@@ -1,0 +1,92 @@
+.card-subtitle,
+.card-title {
+  font-weight: 400 !important;
+  font-size: 1.550rem !important;
+}
+.card-title {
+  font-size: 1.75rem !important;
+  font-weight: 500 !important;
+  color: black;
+  text-align: center
+}
+.card {
+  margin-bottom: 32px;
+  box-shadow: 0 0 0.875rem 0 rgba(33, 37, 41, 0.05);
+}
+.card {
+position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: initial;
+  border: 0 solid transparent;
+  border-radius: 1.25rem;
+}
+.one {
+  background: linear-gradient(90deg, #ce6124, #00695c);
+}
+.two {
+  background: linear-gradient(90deg, #ef7462, #ed3559);
+}
+.three {
+  background: linear-gradient(90deg, #00b8d4, #221517);
+}
+.four {
+  background: linear-gradient(90deg, #00b8d4, #0097a7);
+}
+.five {
+  background: linear-gradient(90deg, #d32f2f, #0e0d0d);
+}
+.six {
+  background: linear-gradient(90deg, #9c27b0, #0e0d0d);
+}
+.seven {
+  background: linear-gradient(90deg, #ce6124, #b5177b);
+}
+.eight {
+  background: linear-gradient(90deg, #ff6d00, #dd2c00);
+}
+.nine {
+  background: linear-gradient(90deg, #544a7d, #010101);
+}
+.teen {
+  background: linear-gradient(90deg, #ad5389, #3c1053);
+}
+.eleven {
+  background: linear-gradient(90deg, #355c7d, #010101);
+}
+.twelve {
+  background: linear-gradient(90deg, #333333, #dd1818);
+}
+
+.card-body {
+  color: #fff;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+.card-header:first-child {
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+.card-header {
+  border-bottom-width: 1px;
+}
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+.card-header {
+  padding: 1.25rem 1.25rem;
+  background-color: #fff;
+  margin-bottom: 0;
+  border-bottom: 0 solid transparent;
+}
+.card li {
+  list-style-type: none;
+}
+.progress-portfolio{
+    background-color:black !important;
+}
+.progress-bar-portfolio{
+    background-color:white !important;
+}
