@@ -279,15 +279,15 @@
       if (isLight) {
         $("body").addClass("light-mode");
         themeIcon.removeClass("fa-moon").addClass("fa-sun");
-        $(".phone-mockup.mockup-1 img").attr("src", "images/screenshots/light-1.png");
-        $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/light-2.png");
-        $(".phone-mockup.mockup-3 img").attr("src", "images/screenshots/light-3.png");
+        $(".phone-mockup.mockup-1 img").attr("src", "images/screenshots/light_1.jpg");
+        $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/light_2.jpg");
+        $(".phone-mockup.mockup-3 img").attr("src", "images/screenshots/light_3.jpg");
       } else {
         $("body").removeClass("light-mode");
         themeIcon.removeClass("fa-sun").addClass("fa-moon");
-        $(".phone-mockup.mockup-1 img").attr("src", "images/screenshots/night-1.png");
-        $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/night-2.png");
-        $(".phone-mockup.mockup-3 img").attr("src", "images/screenshots/night-3.png");
+        $(".phone-mockup.mockup-1 img").attr("src", "images/screenshots/night_1.jpg");
+        $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/night_2.jpg");
+        $(".phone-mockup.mockup-3 img").attr("src", "images/screenshots/night_3.jpg");
       }
     }
 
@@ -353,6 +353,9 @@
         '.primary-menu ul.navbar-nav > li > a.nav-link.active, ' +
         'body.light-mode .primary-menu ul.navbar-nav > li:hover > a.nav-link, ' +
         'body.light-mode .primary-menu ul.navbar-nav > li > a.nav-link.active { ' +
+          'color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.brand-text-second { ' +
           'color: ' + selectedColor + ' !important; ' +
         '} ' +
         '.primary-menu ul.navbar-nav > li > a.nav-link::after { ' +

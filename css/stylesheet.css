@@ -34,11 +34,22 @@
 html {
 	font-size: 100%;
 	height: 100%;
+	overflow-x: hidden !important;
+	max-width: 100% !important;
 }
 body {
 	background: #dddddd;
 	color: #4c4d4d;
 	font-family: "Rubik", sans-serif;
+	overflow-x: hidden !important;
+	max-width: 100% !important;
+	width: 100% !important;
+}
+#main-wrapper {
+	overflow-x: hidden !important;
+	max-width: 100% !important;
+	width: 100% !important;
+	position: relative;
 }
 /*-------- Animsition Preloader --------*/
 .animsition-preloader {
@@ -936,6 +947,25 @@ blockquote p{
 	display: flex;
 	-ms-flex-item-align: stretch;
 	align-self: stretch;
+	font-size: 22px;
+	letter-spacing: 1.5px;
+	text-decoration: none !important;
+}
+
+.brand-text-first {
+	font-size: 22px;
+	letter-spacing: 1.5px;
+	color: #ffffff !important;
+}
+
+.brand-text-second {
+	font-size: 22px;
+	letter-spacing: 1.5px;
+	color: var(--primary-color, #20c997) !important;
+}
+
+body.light-mode .brand-text-first {
+	color: #0f172a !important;
 }
 .pro-title-bg {
     font-weight: 500;
@@ -3856,11 +3886,12 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 	left:0;
 	width:100%
 }
-.dark_svg, .light_svg{
-	position:absolute;
-	bottom:-2px;
-	left:0;
-	width:100%;
+.dark_svg, .light_svg {
+	display: none !important;
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
 	z-index: 9;
 }
 .light_svg svg {
@@ -3899,6 +3930,12 @@ svg:not(:root) {
   transition: all 0.3s ease;
 }
 
+/* Header container padding to prevent logo from touching the screen edges */
+#header .primary-menu .container {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
 @media (min-width: 992px) {
   #header-nav {
     position: absolute;
@@ -3929,7 +3966,7 @@ svg:not(:root) {
   justify-content: center;
 }
 
-/* Underline Indicator ("الشخطة تحتا") */
+/* Underline Indicator */
 .primary-menu ul.navbar-nav > li > a.nav-link::after {
   content: "";
   position: absolute;
@@ -4005,7 +4042,7 @@ body.light-mode .theme-btn {
   color: #000000 !important;
 }
 
-/* Color Circle Button ("دائرة لون اخضر") */
+/* Color Circle Button */
 .color-circle-btn {
   width: 20px;
   height: 20px;
@@ -4033,7 +4070,8 @@ body.light-mode .color-circle-btn {
 .color-palette-popup {
   position: absolute;
   top: calc(100% + 12px);
-  left: -10px;
+  right: 0;
+  left: auto;
   background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -4041,6 +4079,7 @@ body.light-mode .color-circle-btn {
   border-radius: 12px;
   padding: 12px;
   width: 170px;
+  max-width: 90vw;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
@@ -4101,6 +4140,60 @@ body.light-mode .color-option:hover,
 body.light-mode .color-option.active {
   border-color: #000000;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom Header Navbar Toggler (Hamburger 3-lines button) - Mobile Only */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+    width: 40px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    margin: 0 0 0 10px !important;
+    position: relative;
+    outline: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .navbar-toggler span {
+    display: block !important;
+    position: absolute !important;
+    height: 2px !important;
+    width: 20px !important;
+    background: #ffffff !important;
+    border-radius: 2px !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .navbar-toggler span:nth-child(1) { top: 9px !important; }
+  .navbar-toggler span:nth-child(2) { top: 16px !important; }
+  .navbar-toggler span:nth-child(3) { top: 23px !important; }
+
+  body.light-mode .navbar-toggler {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  }
+
+  body.light-mode .navbar-toggler span,
+  body.light-mode .primary-menu.navbar-text-light .navbar-toggler span {
+    background: #0f172a !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none !important;
+  }
 }
 
 /* Light Mode Global Styling Adjustments */
@@ -4295,61 +4388,132 @@ body.light-mode section {
   position: relative;
   width: 100%;
   max-width: 480px;
-  height: 480px;
+  height: 500px;
+}
+
+.hero-mockups-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--primary-glow, rgba(32, 201, 151, 0.25)) 0%, rgba(6, 11, 19, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .phone-mockup {
   position: absolute;
+  aspect-ratio: 9 / 20;
   border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  border: 4px solid #1e293b;
-  background: #0f172a;
-  transition: all 0.4s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  border: 2px solid #1e293b;
+  background: #060b13;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, z-index 0.2s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  isolation: isolate;
+  outline: none;
+}
+
+/* Punch-hole camera notch on top center */
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #000000;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  pointer-events: none;
 }
 
 .phone-mockup img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 9 / 20;
   object-fit: cover;
   display: block;
+  border-radius: 26px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Float Keyframe Animation */
+@keyframes floatDeck1 {
+  0%, 100% {
+    transform: rotate(-6deg) translateY(0px) translateZ(0);
+  }
+  50% {
+    transform: rotate(-6deg) translateY(-10px) translateZ(0);
+  }
+}
+
+@keyframes floatDeck2 {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0px) translateZ(0);
+  }
+  50% {
+    transform: rotate(0deg) translateY(-12px) translateZ(0);
+  }
+}
+
+@keyframes floatDeck3 {
+  0%, 100% {
+    transform: rotate(6deg) translateY(0px) translateZ(0);
+  }
+  50% {
+    transform: rotate(6deg) translateY(-10px) translateZ(0);
+  }
 }
 
 .phone-mockup.mockup-1 {
-  width: 220px;
-  height: 430px;
-  left: 0;
-  top: 20px;
+  width: 200px;
+  height: 444px;
+  aspect-ratio: 9 / 20;
+  left: 10px;
+  top: 25px;
   z-index: 2;
-  transform: rotate(-6deg);
+  animation: floatDeck1 6s ease-in-out infinite;
 }
 
 .phone-mockup.mockup-2 {
-  width: 230px;
-  height: 450px;
-  left: 120px;
+  width: 220px;
+  height: 489px;
+  aspect-ratio: 9 / 20;
+  left: 125px;
   top: 0;
   z-index: 3;
-  transform: rotate(0deg);
-  border-color: #334155;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+  animation: floatDeck2 6s ease-in-out infinite 1.5s;
 }
 
 .phone-mockup.mockup-3 {
-  width: 210px;
-  height: 410px;
-  left: 240px;
-  top: 30px;
+  width: 200px;
+  height: 444px;
+  aspect-ratio: 9 / 20;
+  left: 250px;
+  top: 25px;
   z-index: 1;
-  transform: rotate(6deg);
+  animation: floatDeck3 6s ease-in-out infinite 3s;
 }
 
-.hero-mockups-wrapper:hover .mockup-1 {
-  transform: rotate(-10deg) translateX(-10px);
-}
-
+.phone-mockup:hover,
+.phone-mockup.mockup-1:hover,
+.phone-mockup.mockup-2:hover,
+.phone-mockup.mockup-3:hover,
+.hero-mockups-wrapper:hover .mockup-1,
 .hero-mockups-wrapper:hover .mockup-3 {
-  transform: rotate(10deg) translateX(10px);
+  transform: none;
 }
 
 /* Feature tags right side */
@@ -4373,6 +4537,12 @@ body.light-mode section {
 
 .feature-tag:hover {
   color: var(--primary-color, #20c997);
+}
+
+@media (max-width: 1200px) {
+  .hero-feature-list {
+    display: none !important;
+  }
 }
 
 /* Light Mode Adjustments for Hero Section */
@@ -4418,23 +4588,69 @@ body.light-mode .phone-mockup {
     font-size: 24px;
   }
   .hero-mockups-wrapper {
-    height: 380px;
-    max-width: 360px;
+    height: 390px;
+    max-width: 340px;
+    margin: 0 auto;
   }
   .phone-mockup.mockup-1 {
-    width: 160px;
-    height: 320px;
+    width: 150px;
+    height: 333px;
+    aspect-ratio: 9 / 20;
     left: 0;
+    top: 20px;
   }
   .phone-mockup.mockup-2 {
-    width: 170px;
-    height: 340px;
-    left: 90px;
+    width: 165px;
+    height: 367px;
+    aspect-ratio: 9 / 20;
+    left: 85px;
+    top: 0;
   }
   .phone-mockup.mockup-3 {
     width: 150px;
+    height: 333px;
+    aspect-ratio: 9 / 20;
+    left: 170px;
+    top: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-main-title {
+    font-size: 32px;
+    word-break: break-word;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+  }
+  .hero-description {
+    font-size: 14px;
+  }
+  .hero-mockups-wrapper {
+    height: 310px;
+    max-width: 270px;
+    margin: 0 auto;
+  }
+  .phone-mockup.mockup-1 {
+    width: 120px;
+    height: 267px;
+    aspect-ratio: 9 / 20;
+    left: 0;
+    top: 15px;
+  }
+  .phone-mockup.mockup-2 {
+    width: 135px;
     height: 300px;
-    left: 180px;
+    aspect-ratio: 9 / 20;
+    left: 65px;
+    top: 0;
+  }
+  .phone-mockup.mockup-3 {
+    width: 120px;
+    height: 267px;
+    aspect-ratio: 9 / 20;
+    left: 130px;
+    top: 15px;
   }
 }
 
@@ -5010,16 +5226,23 @@ body.light-mode .progress-custom {
 
 .card-img-wrapper {
   width: 100%;
-  height: 200px;
+  height: 220px;
   border-radius: 16px;
   overflow: hidden;
   background: #e0e0e0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
 }
 
 .card-img-wrapper img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: 100%;
-  object-fit: cover;
+  aspect-ratio: 9 / 20;
+  object-fit: contain;
 }
 
 .portfolio-card:hover .card-img-wrapper img {
