@@ -279,9 +279,15 @@
       if (isLight) {
         $("body").addClass("light-mode");
         themeIcon.removeClass("fa-moon").addClass("fa-sun");
+        $(".phone-mockup.mockup-1 img").attr("src", "images/screenshots/light-1.png");
+        $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/light-2.png");
+        $(".phone-mockup.mockup-3 img").attr("src", "images/screenshots/light-3.png");
       } else {
         $("body").removeClass("light-mode");
         themeIcon.removeClass("fa-sun").addClass("fa-moon");
+        $(".phone-mockup.mockup-1 img").attr("src", "images/screenshots/night-1.png");
+        $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/night-2.png");
+        $(".phone-mockup.mockup-3 img").attr("src", "images/screenshots/night-3.png");
       }
     }
 
@@ -381,6 +387,9 @@
         '} ' +
         '.contact-section .accent-text { ' +
           'color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '#contact h3.card-title:after { ' +
+          'background-color: ' + selectedColor + ' !important; ' +
         '} ' +
         '.project-icon-box { ' +
           'background: ' + rgbaGlow + ' !important; ' +

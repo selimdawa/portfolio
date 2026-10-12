@@ -1143,22 +1143,27 @@ img.profile-img-item{
 	border-radius:6px;
 	border:4px solid rgba(255, 255, 255, 0.05);
 }
-#contact h3 {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 8px;
+.card-title-header {
+  text-align: left !important;
 }
 
-#contact h3:after {
-    display: block !important;
-    content: '' !important;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 100% !important;
-    border-radius: 30px;
-    background-color: var(--primary-color, #20c997) !important;
+#contact h3.card-title {
+  position: relative;
+  display: inline-block !important;
+  padding-bottom: 8px;
+  margin-bottom: 0;
+}
+
+#contact h3.card-title:after {
+  content: '' !important;
+  display: block !important;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100% !important;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--primary-color, #20c997) !important;
 }
 .side-header #main-wrapper {
 	margin-left: 250px;
