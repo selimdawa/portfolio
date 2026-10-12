@@ -1,0 +1,28 @@
+// ==========================================================================
+// Theme Root & Mixins
+// ==========================================================================
+@import 'variables';
+
+:root {
+  // Default Theme S9 Teal
+  --primary-color: #009688;
+  --primary-glow: rgba(0, 150, 136, 0.5);
+  --primary-glow-hover: rgba(0, 150, 136, 0.8);
+  --primary-glow-light: rgba(0, 150, 136, 0.15);
+
+  --bg-dark: #{$bg-dark};
+  --card-bg-dark: #{$card-bg-dark};
+  --input-bg-dark: #{$input-bg-dark};
+  --header-bg-dark: #{$header-bg-dark};
+  --border-dark: #{$border-dark};
+  --text-dark-main: #{$text-dark-main};
+  --text-dark-sub: #{$text-dark-sub};
+
+  --bg-light: #{$bg-light};
+  --card-bg-light: #{$card-bg-light};
+  --input-bg-light: #{$input-bg-light};
+  --header-bg-light: #{$header-bg-light};
+  --border-light: #{$border-light};
+  --text-light-main: #{$text-light-main};
+  --text-light-sub: #{$text-light-sub};
+}

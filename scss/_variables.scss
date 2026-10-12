@@ -1,0 +1,74 @@
+// ==========================================================================
+// SCSS Variables & S1-S10 MC Kotlin Theme Map
+// ==========================================================================
+
+$themes: (
+  "S1": (
+    "name": "Basic",
+    "day": #3c415e,
+    "night": #999999
+  ),
+  "S2": (
+    "name": "Blue",
+    "day": #1976d2,
+    "night": #1976d2
+  ),
+  "S3": (
+    "name": "Orange",
+    "day": #f57c00,
+    "night": #ff9800
+  ),
+  "S4": (
+    "name": "Pink",
+    "day": #c51162,
+    "night": #c51162
+  ),
+  "S5": (
+    "name": "Brown",
+    "day": #8d6e63,
+    "night": #a1887f
+  ),
+  "S6": (
+    "name": "Green",
+    "day": #1b5e20,
+    "night": #4caf50
+  ),
+  "S7": (
+    "name": "Slate",
+    "day": #607d8b,
+    "night": #78909c
+  ),
+  "S8": (
+    "name": "Indigo",
+    "day": #3f51b5,
+    "night": #7986cb
+  ),
+  "S9": (
+    "name": "Teal",
+    "day": #006666,
+    "night": #009688
+  ),
+  "S10": (
+    "name": "Purple",
+    "day": #800080,
+    "night": #9c27b0
+  )
+);
+
+// Global Dark Mode Colors
+$bg-dark: #000000;
+$card-bg-dark: #0d0d0d;
+$input-bg-dark: #141414;
+$header-bg-dark: rgba(13, 13, 13, 0.95);
+$border-dark: rgba(255, 255, 255, 0.1);
+$text-dark-main: #f8fafc;
+$text-dark-sub: #94a3b8;
+
+// Global Light Mode Colors
+$bg-light: #f8fafc;
+$card-bg-light: rgba(255, 255, 255, 0.95);
+$input-bg-light: rgba(255, 255, 255, 0.95);
+$header-bg-light: rgba(255, 255, 255, 0.96);
+$border-light: rgba(0, 0, 0, 0.12);
+$text-light-main: #0f172a;
+$text-light-sub: #334155;

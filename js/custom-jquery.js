@@ -289,6 +289,9 @@
         $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/night_2.jpg");
         $(".phone-mockup.mockup-3 img").attr("src", "images/screenshots/night_3.jpg");
       }
+      if (typeof window.updateActiveThemeColor === "function") {
+        window.updateActiveThemeColor();
+      }
     }
 
     if (savedTheme === "light") {
@@ -304,11 +307,24 @@
     });
   });
 
-  // Color Picker Popup & Palette Switcher
+  // Color Picker Popup & MC S1-S10 Kotlin Theme Switcher
   $(function () {
     var palettePopup = $("#color-palette-popup");
     var colorPickerBtn = $("#color-picker-btn");
-    var colorSwitcherLink = $("#color-switcher");
+
+    // MC S1-S10 Kotlin Theme Color Palette Map
+    var mcThemes = {
+      "S1": { day: "#3C415E", night: "#999999" },
+      "S2": { day: "#1976D2", night: "#1976D2" },
+      "S3": { day: "#F57C00", night: "#FF9800" },
+      "S4": { day: "#C51162", night: "#C51162" },
+      "S5": { day: "#8D6E63", night: "#A1887F" },
+      "S6": { day: "#1B5E20", night: "#4CAF50" },
+      "S7": { day: "#607D8B", night: "#78909C" },
+      "S8": { day: "#3F51B5", night: "#7986CB" },
+      "S9": { day: "#006666", night: "#009688" },
+      "S10": { day: "#800080", night: "#9C27B0" }
+    };
 
     // Toggle Palette Popup on Circle Click
     colorPickerBtn.on("click", function (e) {
@@ -333,7 +349,7 @@
         c = "0x" + c.join("");
         return "rgba(" + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(",") + "," + alpha + ")";
       }
-      return "rgba(32, 201, 151, " + alpha + ")";
+      return "rgba(0, 150, 136, " + alpha + ")";
     }
 
     function applyAccentColor(selectedColor) {
@@ -350,34 +366,30 @@
       colorPickerBtn.css("background-color", selectedColor);
     }
 
-    // Apply Saved Theme Color or Default Teal (#20c997)
-    var savedColorStyle = localStorage.getItem("portfolio_color_style") || "css/color-style/teal.css";
-    var savedColorHex = localStorage.getItem("portfolio_color_hex") || "#20c997";
+    function updateActiveThemeColor() {
+      var currentThemeID = localStorage.getItem("portfolio_theme_id") || "S9";
+      var isLight = $("body").hasClass("light-mode");
+      var themeData = mcThemes[currentThemeID] || mcThemes["S9"];
+      var activeColor = isLight ? themeData.day : themeData.night;
 
-    if (colorSwitcherLink.length) {
-      colorSwitcherLink.attr("href", savedColorStyle);
-    }
-    applyAccentColor(savedColorHex);
-    $(".color-option").removeClass("active");
-    $('.color-option[data-color="' + savedColorHex + '"]').addClass("active");
-
-    // Color Option Selected
-    $(".color-option").on("click", function () {
-      var selectedStyle = $(this).attr("data-style");
-      var selectedColor = $(this).attr("data-color");
-
-      if (colorSwitcherLink.length && selectedStyle) {
-        colorSwitcherLink.attr("href", selectedStyle);
-        localStorage.setItem("portfolio_color_style", selectedStyle);
-      }
-
-      if (selectedColor) {
-        applyAccentColor(selectedColor);
-        localStorage.setItem("portfolio_color_hex", selectedColor);
-      }
+      applyAccentColor(activeColor);
 
       $(".color-option").removeClass("active");
-      $(this).addClass("active");
+      $('.color-option[data-theme="' + currentThemeID + '"]').addClass("active");
+    }
+
+    window.updateActiveThemeColor = updateActiveThemeColor;
+
+    // Apply Saved Theme Color or Default S9
+    updateActiveThemeColor();
+
+    // Color Option Selected (S1 - S10)
+    $(".color-option").on("click", function () {
+      var selectedThemeID = $(this).attr("data-theme") || "S9";
+
+      localStorage.setItem("portfolio_theme_id", selectedThemeID);
+      updateActiveThemeColor();
+
       palettePopup.removeClass("show");
     });
   });
