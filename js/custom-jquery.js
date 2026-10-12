@@ -1,16 +1,20 @@
 (function ($) {
   "use strict";
 
-  // Animsition Loading
-  jQuery(window).on("load", function () {
-    function handlePreloader() {
-      var preloader = $(".animsition-preloader");
-      if (preloader.length) {
-        preloader.delay(200).fadeOut(500);
-      }
+  // Preloader Loading with safety fallback
+  function handlePreloader() {
+    var preloader = $(".animsition-preloader");
+    if (preloader.length && preloader.is(":visible")) {
+      preloader.fadeOut(400);
     }
+  }
+
+  $(window).on("load", function () {
     handlePreloader();
   });
+
+  // Safety fallback: Hide preloader after 800ms max if window.load is delayed
+  setTimeout(handlePreloader, 800);
 
   // Header Sticky
   $(window).on("scroll", function () {
@@ -185,27 +189,53 @@
   });
 
   // Portfolio Filter
-  $(window).on("load", function () {
+  function initPortfolioIsotope() {
     $(".utf-portfolio-filter-item").each(function () {
       var e = $(this);
       var $grid = e.isotope({
-        layoutMode: "masonry",
+        itemSelector: ".col-12",
+        layoutMode: "fitRows",
       });
+
+      // Recalculate Isotope layout when images load
+      e.find("img").each(function () {
+        if (this.complete) {
+          $grid.isotope("layout");
+        } else {
+          $(this).on("load", function () {
+            $grid.isotope("layout");
+          });
+        }
+      });
+
+      // Safety delays to ensure proper container height calculation
+      [100, 300, 600, 1200, 2500].forEach(function (delay) {
+        setTimeout(function () {
+          $grid.isotope("layout");
+        }, delay);
+      });
+
+      // Filter click
       $(".utf-portfolio-filter-menu")
         .find("a")
+        .off("click")
         .on("click", function () {
           var filterValue = $(this).attr("data-filter");
-          return (
-            $(".utf-portfolio-filter-menu").find("a").removeClass("active"),
-            $(this).addClass("active"),
-            $grid.isotope({
-              filter: filterValue,
-            }),
-            !1
-          );
+          $(".utf-portfolio-filter-menu").find("a").removeClass("active");
+          $(this).addClass("active");
+          $grid.isotope({
+            filter: filterValue,
+          });
+          setTimeout(function () {
+            $grid.isotope("layout");
+          }, 100);
+          return false;
         });
     });
-  });
+  }
+
+  $(document).ready(initPortfolioIsotope);
+  $(window).on("load resize", initPortfolioIsotope);
 
   // Parallax Background
   $(".parallax").each(function () {
@@ -237,5 +267,161 @@
   $("#back-to-top").on("click", function () {
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return false;
+  });
+
+  // Dark / Light Theme Toggle (Single Icon Button)
+  $(function () {
+    var savedTheme = localStorage.getItem("portfolio_theme");
+    var themeBtn = $("#theme-toggle-btn");
+    var themeIcon = themeBtn.find(".mode-icon");
+
+    function applyTheme(isLight) {
+      if (isLight) {
+        $("body").addClass("light-mode");
+        themeIcon.removeClass("fa-moon").addClass("fa-sun");
+      } else {
+        $("body").removeClass("light-mode");
+        themeIcon.removeClass("fa-sun").addClass("fa-moon");
+      }
+    }
+
+    if (savedTheme === "light") {
+      applyTheme(true);
+    } else {
+      applyTheme(false);
+    }
+
+    themeBtn.on("click", function () {
+      var isLight = $("body").toggleClass("light-mode").hasClass("light-mode");
+      applyTheme(isLight);
+      localStorage.setItem("portfolio_theme", isLight ? "light" : "dark");
+    });
+  });
+
+  // Color Picker Popup & Palette Switcher
+  $(function () {
+    var palettePopup = $("#color-palette-popup");
+    var colorPickerBtn = $("#color-picker-btn");
+    var colorSwitcherLink = $("#color-switcher");
+
+    // Toggle Palette Popup on Circle Click
+    colorPickerBtn.on("click", function (e) {
+      e.stopPropagation();
+      palettePopup.toggleClass("show");
+    });
+
+    // Close Popup when clicking anywhere outside
+    $(document).on("click", function (e) {
+      if (!$(e.target).closest(".theme-controls-wrapper").length) {
+        palettePopup.removeClass("show");
+      }
+    });
+
+    function hexToRgba(hex, alpha) {
+      var c;
+      if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+        c = hex.substring(1).split("");
+        if (c.length === 3) {
+          c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+        }
+        c = "0x" + c.join("");
+        return "rgba(" + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(",") + "," + alpha + ")";
+      }
+      return "rgba(32, 201, 151, " + alpha + ")";
+    }
+
+    function applyAccentColor(selectedColor) {
+      if (!selectedColor) return;
+      var rgbaGlow = hexToRgba(selectedColor, 0.5);
+      var rgbaHoverGlow = hexToRgba(selectedColor, 0.8);
+
+      document.documentElement.style.setProperty("--primary-color", selectedColor);
+      document.documentElement.style.setProperty("--primary-glow", rgbaGlow);
+
+      colorPickerBtn.css("background-color", selectedColor);
+
+      $("head").find("#dynamic-accent-style").remove();
+      $("head").append(
+        '<style id="dynamic-accent-style">' +
+        '.primary-menu ul.navbar-nav > li:hover > a.nav-link, ' +
+        '.primary-menu ul.navbar-nav > li > a.nav-link.active, ' +
+        'body.light-mode .primary-menu ul.navbar-nav > li:hover > a.nav-link, ' +
+        'body.light-mode .primary-menu ul.navbar-nav > li > a.nav-link.active { ' +
+          'color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.primary-menu ul.navbar-nav > li > a.nav-link::after { ' +
+          'background-color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.color-circle-btn { ' +
+          'box-shadow: 0 0 8px ' + rgbaGlow + ' !important; ' +
+        '} ' +
+        '.color-circle-btn:hover { ' +
+          'box-shadow: 0 0 14px ' + rgbaHoverGlow + ' !important; ' +
+        '} ' +
+        '.light_svg svg { ' +
+          'fill: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.about-image-card .offset-green-frame { ' +
+          'background-color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.about-signature { ' +
+          'color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.resume-badge .accent-text { ' +
+          'color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.portfolio-subheading .green-bar { ' +
+          'background-color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.portfolio-section .accent-text { ' +
+          'color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.contact-subheading .green-bar { ' +
+          'background-color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.contact-section .accent-text { ' +
+          'color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '.project-icon-box { ' +
+          'background: ' + rgbaGlow + ' !important; ' +
+          'border-color: ' + selectedColor + ' !important; ' +
+          'color: ' + selectedColor + ' !important; ' +
+        '} ' +
+        '</style>'
+      );
+    }
+
+    // Apply Saved Theme Color
+    var savedColorStyle = localStorage.getItem("portfolio_color_style");
+    var savedColorHex = localStorage.getItem("portfolio_color_hex");
+
+    if (savedColorStyle && colorSwitcherLink.length) {
+      colorSwitcherLink.attr("href", savedColorStyle);
+    }
+    if (savedColorHex) {
+      applyAccentColor(savedColorHex);
+      $(".color-option").removeClass("active");
+      $('.color-option[data-color="' + savedColorHex + '"]').addClass("active");
+    }
+
+    // Color Option Selected
+    $(".color-option").on("click", function () {
+      var selectedStyle = $(this).attr("data-style");
+      var selectedColor = $(this).attr("data-color");
+
+      if (colorSwitcherLink.length && selectedStyle) {
+        colorSwitcherLink.attr("href", selectedStyle);
+        localStorage.setItem("portfolio_color_style", selectedStyle);
+      }
+
+      if (selectedColor) {
+        applyAccentColor(selectedColor);
+        localStorage.setItem("portfolio_color_hex", selectedColor);
+      }
+
+      $(".color-option").removeClass("active");
+      $(this).addClass("active");
+      palettePopup.removeClass("show");
+    });
   });
 })(jQuery);
