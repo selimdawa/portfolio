@@ -340,81 +340,26 @@
       if (!selectedColor) return;
       var rgbaGlow = hexToRgba(selectedColor, 0.5);
       var rgbaHoverGlow = hexToRgba(selectedColor, 0.8);
+      var rgbaLightGlow = hexToRgba(selectedColor, 0.15);
 
       document.documentElement.style.setProperty("--primary-color", selectedColor);
       document.documentElement.style.setProperty("--primary-glow", rgbaGlow);
+      document.documentElement.style.setProperty("--primary-glow-hover", rgbaHoverGlow);
+      document.documentElement.style.setProperty("--primary-glow-light", rgbaLightGlow);
 
       colorPickerBtn.css("background-color", selectedColor);
-
-      $("head").find("#dynamic-accent-style").remove();
-      $("head").append(
-        '<style id="dynamic-accent-style">' +
-        '.primary-menu ul.navbar-nav > li:hover > a.nav-link, ' +
-        '.primary-menu ul.navbar-nav > li > a.nav-link.active, ' +
-        'body.light-mode .primary-menu ul.navbar-nav > li:hover > a.nav-link, ' +
-        'body.light-mode .primary-menu ul.navbar-nav > li > a.nav-link.active { ' +
-          'color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.brand-text-second { ' +
-          'color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.primary-menu ul.navbar-nav > li > a.nav-link::after { ' +
-          'background-color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.color-circle-btn { ' +
-          'box-shadow: 0 0 8px ' + rgbaGlow + ' !important; ' +
-        '} ' +
-        '.color-circle-btn:hover { ' +
-          'box-shadow: 0 0 14px ' + rgbaHoverGlow + ' !important; ' +
-        '} ' +
-        '.light_svg svg { ' +
-          'fill: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.about-image-card .offset-green-frame { ' +
-          'background-color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.about-signature { ' +
-          'color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.resume-badge .accent-text { ' +
-          'color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.portfolio-subheading .green-bar { ' +
-          'background-color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.portfolio-section .accent-text { ' +
-          'color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.contact-subheading .green-bar { ' +
-          'background-color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.contact-section .accent-text { ' +
-          'color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '#contact h3.card-title:after { ' +
-          'background-color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '.project-icon-box { ' +
-          'background: ' + rgbaGlow + ' !important; ' +
-          'border-color: ' + selectedColor + ' !important; ' +
-          'color: ' + selectedColor + ' !important; ' +
-        '} ' +
-        '</style>'
-      );
     }
 
-    // Apply Saved Theme Color
-    var savedColorStyle = localStorage.getItem("portfolio_color_style");
-    var savedColorHex = localStorage.getItem("portfolio_color_hex");
+    // Apply Saved Theme Color or Default Teal (#20c997)
+    var savedColorStyle = localStorage.getItem("portfolio_color_style") || "css/color-style/teal.css";
+    var savedColorHex = localStorage.getItem("portfolio_color_hex") || "#20c997";
 
-    if (savedColorStyle && colorSwitcherLink.length) {
+    if (colorSwitcherLink.length) {
       colorSwitcherLink.attr("href", savedColorStyle);
     }
-    if (savedColorHex) {
-      applyAccentColor(savedColorHex);
-      $(".color-option").removeClass("active");
-      $('.color-option[data-color="' + savedColorHex + '"]').addClass("active");
-    }
+    applyAccentColor(savedColorHex);
+    $(".color-option").removeClass("active");
+    $('.color-option[data-color="' + savedColorHex + '"]').addClass("active");
 
     // Color Option Selected
     $(".color-option").on("click", function () {
