@@ -1,10 +1,10 @@
 // ==========================================================================
-// Centralized SCSS Color Palette & Variables System
-// Single source of truth for all colors across the application
+// SCSS & CSS Color Variables System
+// Single source of truth for ALL color variables, theme maps, and :root tokens
 // ==========================================================================
 
 // --------------------------------------------------------------------------
-// 1. Base Colors (Defined Exactly Once)
+// 1. Base SCSS Color Palette
 // --------------------------------------------------------------------------
 $color-white:            #ffffff;
 $color-black:            #000000;
@@ -23,7 +23,7 @@ $color-gray-300:         #e0e0e0;
 $color-red-500:          #ef4444;
 
 // --------------------------------------------------------------------------
-// 2. Alpha Translucent Colors (Defined Exactly Once)
+// 2. Alpha Translucent SCSS Variables
 // --------------------------------------------------------------------------
 $alpha-white-05:         rgba(255, 255, 255, 0.05);
 $alpha-white-08:         rgba(255, 255, 255, 0.08);
@@ -59,7 +59,32 @@ $alpha-dark-pill-bg:     rgba(15, 23, 42, 0.6);
 $alpha-light-pill-bg:    rgba(241, 245, 249, 0.8);
 
 // --------------------------------------------------------------------------
-// 3. S1 - S10 Kotlin MC Library Theme Color Map (mc_track)
+// 3. Mode Surface & Typography SCSS Variables
+// --------------------------------------------------------------------------
+$bg-dark:                $color-black;
+$card-bg-dark:           $color-dark-surface;
+$input-bg-dark:          $color-dark-input;
+$header-bg-dark:         $alpha-black-95;
+$popup-bg-dark:          $alpha-popup-dark;
+$border-dark:            $alpha-white-10;
+$border-dark-subtle:     $alpha-white-08;
+$text-dark-main:         $color-slate-50;
+$text-dark-sub:          $color-slate-400;
+$text-dark-muted:        $color-slate-500;
+
+$bg-light:               $color-slate-50;
+$card-bg-light:          $alpha-white-95;
+$input-bg-light:         $alpha-white-95;
+$header-bg-light:        $alpha-white-95;
+$popup-bg-light:         $alpha-white-85;
+$border-light:           $alpha-black-12;
+$border-light-subtle:    $alpha-black-08;
+$text-light-main:        $color-slate-900;
+$text-light-sub:         $color-slate-700;
+$text-light-muted:       $color-slate-500;
+
+// --------------------------------------------------------------------------
+// 4. S1 - S10 Kotlin MC Library Theme Color Map (mc_track)
 // --------------------------------------------------------------------------
 $themes: (
   "S1": (
@@ -115,26 +140,49 @@ $themes: (
 );
 
 // --------------------------------------------------------------------------
-// 4. Mode Surface & Typography Variables
+// 5. CSS Custom Properties (:root) Definition
 // --------------------------------------------------------------------------
-$bg-dark:                $color-black;
-$card-bg-dark:           $color-dark-surface;
-$input-bg-dark:          $color-dark-input;
-$header-bg-dark:         $alpha-black-95;
-$popup-bg-dark:          $alpha-popup-dark;
-$border-dark:            $alpha-white-10;
-$border-dark-subtle:     $alpha-white-08;
-$text-dark-main:         $color-slate-50;
-$text-dark-sub:          $color-slate-400;
-$text-dark-muted:        $color-slate-500;
+:root {
+  // Default Theme S1 Basic
+  --primary-color: #3C415E;
+  --primary-glow: rgba(60, 65, 94, 0.5);
+  --primary-glow-hover: rgba(60, 65, 94, 0.8);
+  --primary-glow-light: rgba(60, 65, 94, 0.15);
 
-$bg-light:               $color-slate-50;
-$card-bg-light:          $alpha-white-95;
-$input-bg-light:         $alpha-white-95;
-$header-bg-light:        $alpha-white-95;
-$popup-bg-light:         $alpha-white-85;
-$border-light:           $alpha-black-12;
-$border-light-subtle:    $alpha-black-08;
-$text-light-main:        $color-slate-900;
-$text-light-sub:         $color-slate-700;
-$text-light-muted:       $color-slate-500;
+  // Dark Mode CSS Variables
+  --bg-dark: #{$bg-dark};
+  --card-bg-dark: #{$card-bg-dark};
+  --input-bg-dark: #{$input-bg-dark};
+  --header-bg-dark: #{$header-bg-dark};
+  --popup-bg-dark: #{$popup-bg-dark};
+  --border-dark: #{$border-dark};
+  --border-dark-subtle: #{$border-dark-subtle};
+  --text-dark-main: #{$text-dark-main};
+  --text-dark-sub: #{$text-dark-sub};
+  --text-dark-muted: #{$text-dark-muted};
+
+  // Light Mode CSS Variables
+  --bg-light: #{$bg-light};
+  --card-bg-light: #{$card-bg-light};
+  --input-bg-light: #{$input-bg-light};
+  --header-bg-light: #{$header-bg-light};
+  --popup-bg-light: #{$popup-bg-light};
+  --border-light: #{$border-light};
+  --border-light-subtle: #{$border-light-subtle};
+  --text-light-main: #{$text-light-main};
+  --text-light-sub: #{$text-light-sub};
+  --text-light-muted: #{$text-light-muted};
+}
+
+// Global Light Mode Root Overrides
+body.light-mode {
+  background-color: var(--bg-light) !important;
+  color: var(--text-light-main) !important;
+
+  #main-wrapper,
+  #content,
+  section {
+    background-color: var(--bg-light) !important;
+    color: var(--text-light-main) !important;
+  }
+}`
