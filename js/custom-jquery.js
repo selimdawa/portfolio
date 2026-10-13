@@ -367,12 +367,21 @@
     }
 
     function updateActiveThemeColor() {
-      var currentThemeID = localStorage.getItem("portfolio_theme_id") || "S9";
+      var currentThemeID = localStorage.getItem("portfolio_theme_id") || "S1";
       var isLight = $("body").hasClass("light-mode");
-      var themeData = mcThemes[currentThemeID] || mcThemes["S9"];
+      var themeData = mcThemes[currentThemeID] || mcThemes["S1"];
       var activeColor = isLight ? themeData.day : themeData.night;
 
       applyAccentColor(activeColor);
+
+      // Dynamically update background colors of all 10 palette circles for Day / Night mode
+      $(".color-option").each(function () {
+        var themeID = $(this).attr("data-theme");
+        if (themeID && mcThemes[themeID]) {
+          var circleColor = isLight ? mcThemes[themeID].day : mcThemes[themeID].night;
+          $(this).css("background-color", circleColor);
+        }
+      });
 
       $(".color-option").removeClass("active");
       $('.color-option[data-theme="' + currentThemeID + '"]').addClass("active");
@@ -380,12 +389,12 @@
 
     window.updateActiveThemeColor = updateActiveThemeColor;
 
-    // Apply Saved Theme Color or Default S9
+    // Apply Saved Theme Color or Default S1
     updateActiveThemeColor();
 
     // Color Option Selected (S1 - S10)
     $(".color-option").on("click", function () {
-      var selectedThemeID = $(this).attr("data-theme") || "S9";
+      var selectedThemeID = $(this).attr("data-theme") || "S1";
 
       localStorage.setItem("portfolio_theme_id", selectedThemeID);
       updateActiveThemeColor();

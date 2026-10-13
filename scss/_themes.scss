@@ -4,11 +4,11 @@
 @import 'variables';
 
 :root {
-  // Default Theme S9 Teal
-  --primary-color: #009688;
-  --primary-glow: rgba(0, 150, 136, 0.5);
-  --primary-glow-hover: rgba(0, 150, 136, 0.8);
-  --primary-glow-light: rgba(0, 150, 136, 0.15);
+  // Default Theme S1 Basic
+  --primary-color: #3C415E;
+  --primary-glow: rgba(60, 65, 94, 0.5);
+  --primary-glow-hover: rgba(60, 65, 94, 0.8);
+  --primary-glow-light: rgba(60, 65, 94, 0.15);
 
   --bg-dark: #{$bg-dark};
   --card-bg-dark: #{$card-bg-dark};
