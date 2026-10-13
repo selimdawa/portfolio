@@ -1,0 +1,266 @@
+// ==========================================================================
+// SCSS Header & Navigation Component
+// ==========================================================================
+@import 'variables';
+@import 'mixins';
+
+#header {
+  .primary-menu {
+    background: var(--header-bg-dark) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-dark-subtle) !important;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+
+    .container {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: $color-white !important;
+
+    .accent-dot {
+      color: var(--primary-color);
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: var(--text-dark-sub) !important;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 16px !important;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &.active {
+        color: $color-white !important;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 16px;
+          right: 16px;
+          height: 2px;
+          background-color: var(--primary-color);
+          border-radius: 2px;
+          box-shadow: 0 0 8px var(--primary-glow);
+        }
+      }
+    }
+  }
+}
+
+body.light-mode #header {
+  .primary-menu {
+    background: var(--header-bg-light) !important;
+    border-bottom: 1px solid var(--border-light-subtle) !important;
+  }
+
+  .logo {
+    color: $color-slate-900 !important;
+  }
+
+  .navbar-nav .nav-link {
+    color: var(--text-light-sub) !important;
+
+    &:hover,
+    &.active {
+      color: $color-slate-900 !important;
+    }
+  }
+}
+
+// Compact Mobile Toggler
+.navbar-toggler {
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 4px !important;
+  border: 1px solid $alpha-white-20 !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  cursor: pointer;
+
+  .toggler-line {
+    width: 16px !important;
+    height: 2px !important;
+    background-color: $color-white !important;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &.show {
+    .toggler-line:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .toggler-line:nth-child(2) {
+      opacity: 0;
+    }
+    .toggler-line:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  }
+}
+
+body.light-mode .navbar-toggler {
+  border-color: $alpha-black-20 !important;
+
+  .toggler-line {
+    background-color: $color-black !important;
+  }
+}
+
+// Header Controls Wrapper
+.theme-controls-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 14px;
+  background: $alpha-dark-pill-bg;
+  border: 1px solid $color-white !important;
+  border-radius: 30px;
+  position: relative;
+}
+
+body.light-mode .theme-controls-wrapper {
+  background: $alpha-light-pill-bg;
+  border: 1px solid $color-black !important;
+}
+
+// Language Toggle Button (Text-Only)
+.lang-btn {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  color: $color-white !important;
+  font-size: 13.5px;
+  font-weight: 700;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+body.light-mode .lang-btn {
+  color: $color-black !important;
+}
+
+// Color Circle Button
+.color-circle-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-color) !important;
+  border: 1px solid $color-white !important;
+  cursor: pointer;
+  box-shadow: 0 0 8px var(--primary-glow) !important;
+
+  &:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 12px var(--primary-glow-hover) !important;
+  }
+}
+
+body.light-mode .color-circle-btn {
+  border: 1px solid $color-black !important;
+}
+
+// Single Theme Toggle Button
+.theme-btn {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  color: $color-white !important;
+  cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    color: var(--primary-color) !important;
+    transform: rotate(15deg);
+  }
+}
+
+body.light-mode .theme-btn {
+  color: $color-black !important;
+}
+
+// Frosted Glass Color Palette Popup
+.color-palette-popup {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: $popup-bg-dark !important;
+  backdrop-filter: blur(20px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(200%) !important;
+  border: 1px solid $alpha-white-25 !important;
+  border-radius: 18px !important;
+  padding: 14px !important;
+  width: 175px;
+  display: none;
+  z-index: 1050;
+
+  &.show {
+    display: block;
+    animation: fadeInDown 0.25s ease forwards;
+  }
+}
+
+body.light-mode .color-palette-popup {
+  background: $alpha-white-85 !important;
+  border: 1px solid $alpha-black-15 !important;
+  box-shadow: 0 15px 35px $alpha-black-15 !important;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.color-palette-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color-white !important;
+  text-align: center;
+}
+
+body.light-mode .color-palette-title {
+  color: $color-black !important;
+}
+
+.color-options-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+
+  .color-option {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid $alpha-white-30;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover,
+    &.active {
+      transform: scale(1.25);
+      border-color: $color-white;
+      box-shadow: 0 0 10px $alpha-white-60;
+    }
+  }
+}

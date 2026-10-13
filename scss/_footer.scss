@@ -1,0 +1,38 @@
+// ==========================================================================
+// SCSS Footer Component
+// ==========================================================================
+@import 'variables';
+
+footer.footer-custom {
+  background-color: var(--card-bg-dark) !important;
+  border-top: 1px solid var(--border-dark-subtle) !important;
+  padding: 24px 0;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-dark-sub);
+  }
+
+  .heart-icon {
+    color: $color-red-500;
+    display: inline-block;
+    animation: heartPulse 1.5s infinite;
+  }
+}
+
+body.light-mode footer.footer-custom {
+  background-color: $color-white !important;
+  border-top: 1px solid var(--border-light-subtle) !important;
+
+  p {
+    color: var(--text-light-sub);
+  }
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

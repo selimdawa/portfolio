@@ -1,7 +1,66 @@
 // ==========================================================================
-// SCSS Variables & S1-S10 MC Kotlin Theme Map
+// Centralized SCSS Color Palette & Variables System
+// Single source of truth for all colors across the application
 // ==========================================================================
 
+// --------------------------------------------------------------------------
+// 1. Base Colors (Defined Exactly Once)
+// --------------------------------------------------------------------------
+$color-white:            #ffffff;
+$color-black:            #000000;
+$color-slate-900:        #0f172a;
+$color-slate-800:        #1e293b;
+$color-slate-700:        #334155;
+$color-slate-500:        #64748b;
+$color-slate-400:        #94a3b8;
+$color-slate-50:         #f8fafc;
+$color-slate-100:        #f1f5f9;
+$color-dark-surface:     #0d0d0d;
+$color-dark-input:       #141414;
+$color-dark-device:      #111111;
+$color-popup-dark:       #121826;
+$color-gray-300:         #e0e0e0;
+$color-red-500:          #ef4444;
+
+// --------------------------------------------------------------------------
+// 2. Alpha Translucent Colors (Defined Exactly Once)
+// --------------------------------------------------------------------------
+$alpha-white-05:         rgba(255, 255, 255, 0.05);
+$alpha-white-08:         rgba(255, 255, 255, 0.08);
+$alpha-white-10:         rgba(255, 255, 255, 0.1);
+$alpha-white-12:         rgba(255, 255, 255, 0.12);
+$alpha-white-15:         rgba(255, 255, 255, 0.15);
+$alpha-white-20:         rgba(255, 255, 255, 0.2);
+$alpha-white-25:         rgba(255, 255, 255, 0.25);
+$alpha-white-30:         rgba(255, 255, 255, 0.3);
+$alpha-white-60:         rgba(255, 255, 255, 0.6);
+$alpha-white-80:         rgba(255, 255, 255, 0.8);
+$alpha-white-85:         rgba(255, 255, 255, 0.85);
+$alpha-white-95:         rgba(255, 255, 255, 0.95);
+
+$alpha-black-04:         rgba(0, 0, 0, 0.04);
+$alpha-black-05:         rgba(0, 0, 0, 0.05);
+$alpha-black-06:         rgba(0, 0, 0, 0.06);
+$alpha-black-08:         rgba(0, 0, 0, 0.08);
+$alpha-black-10:         rgba(0, 0, 0, 0.1);
+$alpha-black-12:         rgba(0, 0, 0, 0.12);
+$alpha-black-15:         rgba(0, 0, 0, 0.15);
+$alpha-black-20:         rgba(0, 0, 0, 0.2);
+$alpha-black-30:         rgba(0, 0, 0, 0.3);
+$alpha-black-60:         rgba(0, 0, 0, 0.6);
+$alpha-black-70:         rgba(0, 0, 0, 0.7);
+$alpha-black-80:         rgba(0, 0, 0, 0.8);
+$alpha-black-85:         rgba(0, 0, 0, 0.85);
+$alpha-black-90:         rgba(10, 10, 10, 0.9);
+$alpha-black-95:         rgba(13, 13, 13, 0.95);
+
+$alpha-popup-dark:       rgba(18, 24, 38, 0.8);
+$alpha-dark-pill-bg:     rgba(15, 23, 42, 0.6);
+$alpha-light-pill-bg:    rgba(241, 245, 249, 0.8);
+
+// --------------------------------------------------------------------------
+// 3. S1 - S10 Kotlin MC Library Theme Color Map (mc_track)
+// --------------------------------------------------------------------------
 $themes: (
   "S1": (
     "name": "Basic",
@@ -55,20 +114,27 @@ $themes: (
   )
 );
 
-// Global Dark Mode Colors
-$bg-dark: #000000;
-$card-bg-dark: #0d0d0d;
-$input-bg-dark: #141414;
-$header-bg-dark: rgba(13, 13, 13, 0.95);
-$border-dark: rgba(255, 255, 255, 0.1);
-$text-dark-main: #f8fafc;
-$text-dark-sub: #94a3b8;
+// --------------------------------------------------------------------------
+// 4. Mode Surface & Typography Variables
+// --------------------------------------------------------------------------
+$bg-dark:                $color-black;
+$card-bg-dark:           $color-dark-surface;
+$input-bg-dark:          $color-dark-input;
+$header-bg-dark:         $alpha-black-95;
+$popup-bg-dark:          $alpha-popup-dark;
+$border-dark:            $alpha-white-10;
+$border-dark-subtle:     $alpha-white-08;
+$text-dark-main:         $color-slate-50;
+$text-dark-sub:          $color-slate-400;
+$text-dark-muted:        $color-slate-500;
 
-// Global Light Mode Colors
-$bg-light: #f8fafc;
-$card-bg-light: rgba(255, 255, 255, 0.95);
-$input-bg-light: rgba(255, 255, 255, 0.95);
-$header-bg-light: rgba(255, 255, 255, 0.96);
-$border-light: rgba(0, 0, 0, 0.12);
-$text-light-main: #0f172a;
-$text-light-sub: #334155;
+$bg-light:               $color-slate-50;
+$card-bg-light:          $alpha-white-95;
+$input-bg-light:         $alpha-white-95;
+$header-bg-light:        $alpha-white-95;
+$popup-bg-light:         $alpha-white-85;
+$border-light:           $alpha-black-12;
+$border-light-subtle:    $alpha-black-08;
+$text-light-main:        $color-slate-900;
+$text-light-sub:         $color-slate-700;
+$text-light-muted:       $color-slate-500;

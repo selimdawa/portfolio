@@ -1,0 +1,105 @@
+// ==========================================================================
+// SCSS About Me Section Component
+// ==========================================================================
+@import 'variables';
+
+#about {
+  padding: 90px 0;
+
+  .section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: $color-white;
+  }
+}
+
+body.light-mode #about .section-title {
+  color: $color-slate-900;
+}
+
+// 9:16 Portrait Image Card
+.about-image-card {
+  border-radius: 24px;
+  overflow: hidden;
+
+  .image-inner {
+    border-radius: 20px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.04);
+    }
+  }
+}
+
+body.light-mode .about-image-card .image-inner {
+  border: 2px solid $color-white !important;
+  box-shadow: 0 20px 40px $alpha-black-12 !important;
+}
+
+// Stats Card Row
+.stat-box {
+  background: var(--card-bg-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  padding: 18px 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  .stat-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary-color);
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-dark-sub);
+  }
+
+  &:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-glow-light);
+  }
+}
+
+body.light-mode .stat-box {
+  background: var(--card-bg-light);
+  border-color: var(--border-light);
+
+  .stat-label {
+    color: var(--text-light-sub);
+  }
+}
+
+// Tech Stack Badges
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: $alpha-white-05;
+  border: 1px solid $alpha-white-10;
+  border-radius: 20px;
+  font-size: 13px;
+  color: $color-white;
+  margin: 3px;
+
+  i {
+    color: var(--primary-color);
+  }
+}
+
+body.light-mode .tech-badge {
+  background: $alpha-black-04;
+  border-color: $alpha-black-10;
+  color: $color-slate-900;
+}

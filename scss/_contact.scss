@@ -1,0 +1,100 @@
+// ==========================================================================
+// SCSS Contact Me Section Component
+// ==========================================================================
+@import 'variables';
+@import 'mixins';
+
+#contact {
+  padding: 90px 0;
+
+  .contact-info-card,
+  .contact-form-card {
+    padding: 30px;
+  }
+
+  .contact-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-white;
+    margin-bottom: 20px;
+  }
+}
+
+body.light-mode #contact .contact-title {
+  color: $color-slate-900;
+}
+
+// Icon Boxes
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: $alpha-white-05 !important;
+  border: 1px solid $alpha-white-12 !important;
+  @include flex-center;
+
+  i {
+    color: var(--primary-color) !important;
+    font-size: 18px;
+  }
+}
+
+body.light-mode .contact-icon-box {
+  background: $alpha-black-04 !important;
+  border-color: $alpha-black-12 !important;
+}
+
+// Form Controls
+.contact-form-card {
+  .form-control {
+    background: var(--input-bg-dark) !important;
+    border: 1px solid var(--border-dark) !important;
+    color: $color-white !important;
+    border-radius: 12px;
+    padding: 12px 16px;
+
+    &:focus {
+      border-color: var(--primary-color) !important;
+      box-shadow: 0 0 10px var(--primary-glow-light) !important;
+    }
+  }
+}
+
+body.light-mode .contact-form-card {
+  .form-control {
+    background: var(--input-bg-light) !important;
+    border: 1px solid var(--border-light) !important;
+    color: $color-slate-900 !important;
+  }
+}
+
+// Social Media Action Circles
+.social-circle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: $alpha-white-08;
+  border: 1px solid $alpha-white-12;
+  color: $color-white !important;
+  @include flex-center;
+  display: inline-flex;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 12px var(--primary-glow);
+    transform: translateY(-3px);
+  }
+}
+
+body.light-mode .social-circle-btn {
+  background: $alpha-black-05;
+  border-color: $alpha-black-12;
+  color: $color-slate-900 !important;
+
+  &:hover {
+    background: var(--primary-color);
+    color: $color-white !important;
+  }
+}

@@ -1,7 +1,15 @@
 // ==========================================================================
-// SCSS Main Entry Point
+// Main SCSS Stylesheet Entry Point
 // ==========================================================================
-@import 'variables';
-@import 'themes';
 
-// Imports main components and exports compiled stylesheet
+@import 'variables';
+@import 'mixins';
+@import 'themes';
+@import 'base';
+@import 'header';
+@import 'hero';
+@import 'about';
+@import 'resume';
+@import 'portfolio';
+@import 'contact';
+@import 'footer';

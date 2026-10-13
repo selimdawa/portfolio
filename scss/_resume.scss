@@ -1,0 +1,98 @@
+// ==========================================================================
+// SCSS Resume Section Component
+// ==========================================================================
+@import 'variables';
+
+#resume {
+  padding: 90px 0;
+
+  .resume-card {
+    padding: 24px;
+    margin-bottom: 24px;
+    position: relative;
+
+    .date-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: $alpha-white-08;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: $color-white;
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
+      font-size: 14px;
+      color: var(--text-dark-sub);
+      margin-bottom: 12px;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: var(--text-dark-muted);
+    }
+  }
+}
+
+body.light-mode #resume .resume-card {
+  .date-badge {
+    background: $alpha-black-06;
+  }
+
+  .card-title {
+    color: $color-slate-900;
+  }
+
+  .card-subtitle {
+    color: var(--text-light-sub);
+  }
+
+  .card-text {
+    color: var(--text-light-muted);
+  }
+}
+
+// Skill Progress Bars
+.skill-card {
+  padding: 20px;
+  margin-bottom: 16px;
+
+  .skill-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-white;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .progress {
+    height: 6px;
+    background: $alpha-white-10;
+    border-radius: 3px;
+    overflow: hidden;
+
+    .progress-bar {
+      background-color: var(--primary-color);
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+  }
+}
+
+body.light-mode .skill-card {
+  .skill-title {
+    color: $color-slate-900;
+  }
+
+  .progress {
+    background: $alpha-black-08;
+  }
+}

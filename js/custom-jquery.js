@@ -110,83 +110,21 @@
       $($(this).data("target")).toggleClass("show");
     });
 
-  // Owl Carousel
-  $(".owl-carousel").each(function (index) {
-    var a = $(this);
-    $(this).owlCarousel({
-      autoplay: a.data("autoplay"),
-      center: a.data("center"),
-      autoplayTimeout: a.data("autoplaytimeout"),
-      autoplayHoverPause: a.data("autoplayhoverpause"),
-      loop: a.data("loop"),
-      speed: a.data("speed"),
-      nav: a.data("nav"),
-      dots: a.data("dots"),
-      autoHeight: a.data("autoheight"),
-      autoWidth: a.data("autowidth"),
-      margin: a.data("margin"),
-      stagePadding: a.data("stagepadding"),
-      slideBy: a.data("slideby"),
-      lazyLoad: a.data("lazyload"),
-      navText: [
-        '<i class="fa fa-chevron-left"></i>',
-        '<i class="fa fa-chevron-right"></i>',
-      ],
-      animateOut: a.data("animateout"),
-      animateIn: a.data("animatein"),
-      video: a.data("video"),
-      items: a.data("items"),
-      responsive: {
-        0: { items: a.data("items-xs") },
-        576: { items: a.data("items-sm") },
-        768: { items: a.data("items-md") },
-        992: { items: a.data("items-lg") },
-      },
-    });
-  });
-
-  // Text Rotator Animation
-  $(".text-rotator").each(function () {
-    $(this).Morphext({
-      speed: 3000, // Overrides default 2000
-    });
-  });
-
   // Typed Text Animation
-  $(".typed").each(function () {
-    var typed = new Typed(".typed", {
-      stringsElement: ".typed-strings",
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 1500,
-    });
-  });
-
-  // WOW Animation
-  $(".wow").each(function () {
-    if ($(window).width() > 767) {
-      var wow = new WOW({
-        boxClass: "wow",
-        animateClass: "animated",
-        offset: 0,
-        mobile: false,
-        live: true,
+  if ($(".typed").length) {
+    $(".typed").each(function () {
+      var typed = new Typed(".typed", {
+        stringsElement: ".typed-strings",
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 1500,
       });
-      new WOW().init();
-    }
-  });
+    });
+  }
 
   // Tooltips
   $("[data-toggle='tooltip']").tooltip({ container: "body" });
-
-  // Popup Youtube Video, Popup Viemo Video, Popup Gmaps
-  $(".popup-youtube, .popup-vimeo, .popup-gmaps").each(function () {
-    $(this).magnificPopup({
-      type: "iframe",
-      mainClass: "mfp-fade",
-    });
-  });
 
   // Portfolio Filter
   function initPortfolioIsotope() {
@@ -236,13 +174,6 @@
 
   $(document).ready(initPortfolioIsotope);
   $(window).on("load resize", initPortfolioIsotope);
-
-  // Parallax Background
-  $(".parallax").each(function () {
-    $(this).parallaxie({
-      speed: 0.5,
-    });
-  });
 
   // Counter
   $(".counter").each(function () {

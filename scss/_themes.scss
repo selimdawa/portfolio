@@ -1,5 +1,5 @@
 // ==========================================================================
-// Theme Root & Mixins
+// SCSS Themes & Root CSS Variables Mapping
 // ==========================================================================
 @import 'variables';
 
@@ -10,19 +10,40 @@
   --primary-glow-hover: rgba(60, 65, 94, 0.8);
   --primary-glow-light: rgba(60, 65, 94, 0.15);
 
+  // Dark Mode Tokens
   --bg-dark: #{$bg-dark};
   --card-bg-dark: #{$card-bg-dark};
   --input-bg-dark: #{$input-bg-dark};
   --header-bg-dark: #{$header-bg-dark};
+  --popup-bg-dark: #{$popup-bg-dark};
   --border-dark: #{$border-dark};
+  --border-dark-subtle: #{$border-dark-subtle};
   --text-dark-main: #{$text-dark-main};
   --text-dark-sub: #{$text-dark-sub};
+  --text-dark-muted: #{$text-dark-muted};
 
+  // Light Mode Tokens
   --bg-light: #{$bg-light};
   --card-bg-light: #{$card-bg-light};
   --input-bg-light: #{$input-bg-light};
   --header-bg-light: #{$header-bg-light};
+  --popup-bg-light: #{$popup-bg-light};
   --border-light: #{$border-light};
+  --border-light-subtle: #{$border-light-subtle};
   --text-light-main: #{$text-light-main};
   --text-light-sub: #{$text-light-sub};
+  --text-light-muted: #{$text-light-muted};
+}
+
+// Global Light Mode Root Overrides
+body.light-mode {
+  background-color: var(--bg-light) !important;
+  color: var(--text-light-main) !important;
+
+  #main-wrapper,
+  #content,
+  section {
+    background-color: var(--bg-light) !important;
+    color: var(--text-light-main) !important;
+  }
 }

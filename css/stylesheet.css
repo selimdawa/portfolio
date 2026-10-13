@@ -5033,6 +5033,11 @@ body.light-mode .about-badge {
   color: #1e293b !important;
 }
 
+body.light-mode .about-image-card .image-inner {
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
 body.light-mode .about-info-card {
   background: rgba(255, 255, 255, 0.95) !important;
   border: 1px solid rgba(0, 0, 0, 0.12) !important;
@@ -5115,13 +5120,6 @@ body.light-mode .about-info-list .info-value a {
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 16px;
   backdrop-filter: blur(8px);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.resume-card:hover {
-  transform: translateY(-10px) !important;
-  border-color: var(--primary-color, #20c997) !important;
-  box-shadow: 0 0 25px var(--primary-glow-hover, rgba(32, 201, 151, 0.6)), 0 20px 50px rgba(0, 0, 0, 0.85) !important;
 }
 
 .resume-card .card-title {
@@ -5188,13 +5186,6 @@ body.light-mode .accent-link:hover {
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 16px;
   backdrop-filter: blur(8px);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.skill-card:hover {
-  transform: translateY(-10px) !important;
-  border-color: var(--primary-color, #20c997) !important;
-  box-shadow: 0 0 25px var(--primary-glow-hover, rgba(32, 201, 151, 0.6)), 0 20px 50px rgba(0, 0, 0, 0.85) !important;
 }
 
 .progress-custom {
@@ -5349,16 +5340,9 @@ body.light-mode .progress-custom {
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 20px;
   backdrop-filter: blur(8px);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.portfolio-card:hover {
-  transform: translateY(-10px) !important;
-  border-color: var(--primary-color, #20c997) !important;
-  box-shadow: 0 0 25px var(--primary-glow-hover, rgba(32, 201, 151, 0.6)), 0 20px 50px rgba(0, 0, 0, 0.85) !important;
 }
 
 .card-img-wrapper {
@@ -5475,15 +5459,31 @@ body.light-mode .contact-form-card {
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-body.light-mode .portfolio-card:hover,
+/* Universal Card Hover Rule for ALL Cards (Day & Night) */
+.resume-card,
+.portfolio-card,
+.about-info-card,
+.contact-info-card,
+.contact-form-card,
+.skill-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.resume-card:hover,
+.portfolio-card:hover,
+.about-info-card:hover,
+.contact-info-card:hover,
+.contact-form-card:hover,
+.skill-card:hover,
 body.light-mode .resume-card:hover,
+body.light-mode .portfolio-card:hover,
 body.light-mode .about-info-card:hover,
 body.light-mode .contact-info-card:hover,
 body.light-mode .contact-form-card:hover,
 body.light-mode .skill-card:hover {
   transform: translateY(-10px) !important;
-  border-color: var(--primary-color, #20c997) !important;
-  box-shadow: 0 0 25px var(--primary-glow-hover, rgba(32, 201, 151, 0.6)), 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 25px var(--primary-glow-hover), 0 20px 45px rgba(0, 0, 0, 0.3) !important;
 }
 
 body.light-mode .project-title {

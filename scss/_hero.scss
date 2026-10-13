@@ -1,0 +1,139 @@
+// ==========================================================================
+// SCSS Hero / Intro Section Component
+// ==========================================================================
+@import 'variables';
+@import 'mixins';
+
+#home {
+  padding-top: 130px;
+  padding-bottom: 90px;
+  min-height: 100vh;
+  @include flex-center;
+
+  .hero-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+  }
+
+  .hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: $color-white;
+    line-height: 1.2;
+
+    @include mobile {
+      font-size: 32px;
+    }
+  }
+
+  .hero-description {
+    font-size: 17px;
+    color: var(--text-dark-sub);
+    max-width: 580px;
+  }
+}
+
+body.light-mode #home {
+  .hero-title {
+    color: $color-slate-900;
+  }
+
+  .hero-description {
+    color: var(--text-light-sub);
+  }
+}
+
+// Hero Action Buttons
+.btn-hero-primary {
+  background-color: var(--primary-color) !important;
+  color: $color-white !important;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 4px 15px var(--primary-glow);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--primary-glow-hover);
+    color: $color-white !important;
+  }
+}
+
+.btn-hero-outline {
+  background: transparent !important;
+  color: $color-white !important;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 1px solid var(--border-dark) !important;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+  }
+}
+
+body.light-mode .btn-hero-outline {
+  color: $color-slate-900 !important;
+  border-color: $alpha-black-20 !important;
+}
+
+// Floating Deck with Bezel-less Mobile Mockups
+.hero-deck-container {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  @include flex-center;
+
+  .phone-mockup {
+    position: absolute;
+    width: 210px;
+    border-radius: 32px;
+    padding: 3px;
+    background: $color-dark-device;
+    box-shadow: 0 25px 50px $alpha-black-60;
+    border: 1px solid $alpha-white-15;
+    transition: all 0.4s ease;
+
+    img {
+      width: 100%;
+      border-radius: 29px;
+      display: block;
+    }
+
+    &.mockup-1 {
+      transform: translateX(-120px) rotate(-10deg) scale(0.9);
+      z-index: 1;
+    }
+
+    &.mockup-2 {
+      transform: translateX(0) scale(1.05);
+      z-index: 3;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 30px var(--primary-glow), 0 30px 60px $alpha-black-80;
+    }
+
+    &.mockup-3 {
+      transform: translateX(120px) rotate(10deg) scale(0.9);
+      z-index: 2;
+    }
+
+    &:hover {
+      transform: translateY(-10px) scale(1.08) !important;
+      z-index: 10;
+    }
+  }
+}
+
+body.light-mode .phone-mockup {
+  background: $color-white;
+  border-color: $alpha-black-12;
+  box-shadow: 0 20px 40px $alpha-black-15;
+}
