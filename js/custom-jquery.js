@@ -269,6 +269,21 @@
     return false;
   });
 
+  // Language Toggle Button (AR / EN)
+  $(function () {
+    var langBtn = $("#lang-toggle-btn");
+    var langText = langBtn.find(".lang-text");
+
+    langBtn.on("click", function () {
+      var currentLang = langText.text().trim();
+      if (currentLang === "AR") {
+        langText.text("EN");
+      } else {
+        langText.text("AR");
+      }
+    });
+  });
+
   // Dark / Light Theme Toggle (Single Icon Button)
   $(function () {
     var savedTheme = localStorage.getItem("portfolio_theme");
