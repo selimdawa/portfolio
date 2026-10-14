@@ -208,9 +208,17 @@
     langBtn.on("click", function () {
       var currentLang = langText.text().trim();
       if (currentLang === "AR") {
-        window.location.href = "index_ar.html";
+        if (window.location.pathname.indexOf("/EN/") !== -1) {
+          window.location.href = "https://selimdawa.github.io/AR/portfolio/";
+        } else {
+          window.location.href = "index_ar.html";
+        }
       } else if (currentLang === "EN") {
-        window.location.href = "index.html";
+        if (window.location.pathname.indexOf("/AR/") !== -1) {
+          window.location.href = "https://selimdawa.github.io/portfolio/";
+        } else {
+          window.location.href = "index.html";
+        }
       }
     });
   });

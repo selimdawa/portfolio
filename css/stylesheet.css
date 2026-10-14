@@ -11,7 +11,6 @@
   --primary-glow-light: rgba(60, 65, 94, 0.15);
 
   --color-surface-dark: #1c1c1c;
-  --color-gray-light: #f0f0f0;
   --color-gray-lighter: #f8f9fa;
   --color-border-gray: #eee;
   --color-gray-card: #f1f5f6;
@@ -23,8 +22,6 @@
   --color-gray-text: #4d555a;
   --color-gray-subtext: #64686c;
   --color-gray-muted: #999999;
-  --color-gray-light-text: #666666;
-  --color-gray-dark-text: #333333;
   --color-dark-svg: #25292d;
   --color-dark-surface: #0d0d0d;
   --color-dark-input: #141414;
@@ -49,7 +46,6 @@
   --alpha-white-12: rgba(255, 255, 255, 0.12);
   --alpha-white-15: rgba(255, 255, 255, 0.15);
   --alpha-white-20: rgba(255, 255, 255, 0.2);
-  --alpha-white-25: rgba(255, 255, 255, 0.25);
   --alpha-white-30: rgba(255, 255, 255, 0.3);
   --alpha-white-50: rgba(255, 255, 255, 0.5);
   --alpha-white-60: rgba(255, 255, 255, 0.6);
@@ -58,6 +54,7 @@
   --alpha-white-90: rgba(255, 255, 255, 0.9);
   --alpha-white-95: rgba(255, 255, 255, 0.95);
 
+  /* Alpha / RGBA Black Tokens */
   --alpha-black-03: rgba(0, 0, 0, 0.03);
   --alpha-black-04: rgba(0, 0, 0, 0.04);
   --alpha-black-05: rgba(0, 0, 0, 0.05);
@@ -69,11 +66,9 @@
   --alpha-black-25: rgba(0, 0, 0, 0.25);
   --alpha-black-30: rgba(0, 0, 0, 0.3);
   --alpha-black-40: rgba(0, 0, 0, 0.4);
-  --alpha-black-50: rgba(0, 0, 0, 0.5);
   --alpha-black-60: rgba(0, 0, 0, 0.6);
   --alpha-black-70: rgba(0, 0, 0, 0.7);
   --alpha-black-80: rgba(0, 0, 0, 0.8);
-  --alpha-black-85: rgba(0, 0, 0, 0.85);
   --alpha-black-90: rgba(0, 0, 0, 0.9);
   --alpha-black-95: rgba(0, 0, 0, 0.95);
 
@@ -82,7 +77,6 @@
   --shadow-card-dark: rgba(60, 72, 88, 0.15);
   --overlay-menu-light: rgba(255, 255, 250, 0.95);
   --shadow-dropdown: rgba(0, 0, 0, 0.176);
-  --overlay-radial-hero: rgba(6, 11, 19, 0);
 
   /* Dark Mode SCSS Palette Mapped to CSS Variables */
   --bg-dark: var(--color-black);
@@ -4186,8 +4180,16 @@ body.light-mode #submit-btn:hover * {
   border-radius: 20px;
   font-size: 13px;
   font-weight: 500;
-  color: var(--text-dark-sub);
+  color: var(--text-dark-main);
   transition: all 0.3s ease;
+}
+
+.tech-badge i,
+.tech-badge-svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  color: var(--color-white) !important;
 }
 
 .tech-badge:hover {
@@ -4339,9 +4341,9 @@ body.light-mode #submit-btn:hover * {
 }
 
 .feature-tag {
-  font-size: 16.5px !important;
-  font-weight: 800 !important;
-  letter-spacing: 2px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   color: var(--primary-color) !important;
   writing-mode: vertical-rl;
   text-transform: uppercase;
@@ -4394,7 +4396,12 @@ body.light-mode .btn-hero-secondary:hover {
 body.light-mode .tech-badge {
   background: var(--alpha-white-90);
   border-color: var(--alpha-black-15);
-  color: var(--text-light-sub);
+  color: var(--text-light-main);
+}
+
+body.light-mode .tech-badge i,
+body.light-mode .tech-badge-svg {
+  color: var(--text-light-main) !important;
 }
 
 body.light-mode .phone-mockup {
@@ -4580,7 +4587,8 @@ body.light-mode .text-white {
 
 .about-subtitle {
   font-size: 22px;
-  color: var(--text-dark-sub);
+  color: var(--text-dark-sub) !important;
+  opacity: 1 !important;
 }
 
 .about-description {
@@ -4608,7 +4616,7 @@ body.light-mode .text-white {
 
 .stat-label {
   font-size: 11px;
-  color: var(--text-dark-muted);
+  color: var(--text-dark-sub) !important;
   display: block;
 }
 
@@ -4752,7 +4760,7 @@ body.light-mode .text-white {
 .about-info-list .info-label {
   display: block;
   font-size: 11px;
-  color: var(--text-dark-muted);
+  color: var(--text-dark-sub) !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -4819,8 +4827,8 @@ body.light-mode .info-card-title {
 }
 
 body.light-mode .about-info-list .icon-box {
-  background: var(--border-light-subtle);
-  border-color: var(--border-light);
+  background: var(--bg-light) !important;
+  border-color: var(--border-light-subtle) !important;
 }
 
 body.light-mode .about-info-list .info-value {
@@ -4891,6 +4899,14 @@ body.light-mode .about-info-list .info-value a {
   border: 1px solid var(--border-dark) !important;
   border-radius: 16px;
   backdrop-filter: blur(8px);
+}
+
+.company-name {
+  color: var(--text-dark-sub) !important;
+}
+
+.resume-card .card-text {
+  color: var(--text-dark-sub) !important;
 }
 
 .resume-card .card-title {
@@ -5002,7 +5018,8 @@ body.light-mode .skill-name {
 body.light-mode .resume-card p,
 body.light-mode .resume-card span,
 body.light-mode .resume-card .card-subtitle,
-body.light-mode .resume-card .text-muted {
+body.light-mode .resume-card .text-muted,
+body.light-mode .company-name {
   color: var(--text-light-sub) !important;
 }
 
@@ -5136,7 +5153,7 @@ body.light-mode .progress-custom {
   height: 200px;
   border-radius: 16px;
   overflow: hidden;
-  background: var(--border-light) !important;
+  background: #e0e0e0 !important;
   display: block;
   padding: 0;
 }
@@ -5387,11 +5404,12 @@ body.light-mode .project-arrow-btn:hover i {
   color: var(--primary-color) !important;
 }
 
-.contact-info-list .info-label {
+.contact-info-list .info-label,
+.social-title {
   font-size: 11px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--text-dark-muted);
+  color: var(--text-dark-sub) !important;
 }
 
 .contact-info-list .info-value,
@@ -5486,8 +5504,9 @@ body.light-mode .contact-form-card .card-title {
   color: var(--text-light-main) !important;
 }
 
-body.light-mode .contact-info-list .info-label {
-  color: var(--text-light-muted) !important;
+body.light-mode .contact-info-list .info-label,
+body.light-mode .social-title {
+  color: var(--text-light-sub) !important;
 }
 
 body.light-mode .contact-info-list .info-value,
@@ -5513,8 +5532,8 @@ body.light-mode .custom-dark-input::placeholder {
 }
 
 body.light-mode .contact-icon-box {
-  background: var(--border-light) !important;
-  border-color: var(--border-light) !important;
+  background: var(--bg-light) !important;
+  border-color: var(--border-light-subtle) !important;
   color: var(--text-light-main) !important;
 }
 
@@ -5586,6 +5605,12 @@ html[dir="rtl"] #home.hero-section::before {
 html[dir="rtl"] .hero-feature-list {
   right: auto !important;
   left: -30px !important;
+}
+
+html[dir="rtl"] .feature-tag {
+  font-size: 16.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
 }
 
 /* Offset frame in RTL */
