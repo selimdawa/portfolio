@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <!-- Basic Page Needs ================================================== -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="سليم ضوا">
+  <meta name="description" content="سليم ضوا - معرض الأعمال الخاص بمطور أندرويد">
+  <meta name="theme-color" content="#e54b4b">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords"
+    content="سليم ضوا, مطور أندرويد, معرض أعمال, كوتلن, جت باك كومبوز, تطبيقات جافا, تصميم تطبيقات, أندرويد ستوديو" />
+  <!-- ========== Title ========== -->
+  <title>سليم ضوا - معرض الأعمال</title>
+
+  <!-- Favicon Icon -->
+  <link href="images/favicon.png" rel="shortcut icon" />
+
+  <!-- Google Web Fonts (Tajawal & Rubik) -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet  -->
+  <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="plugins/font-awesome/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="plugins/owl.carousel/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="plugins/magnific-popup/magnific-popup.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="70" dir="rtl">
+
+  <!-- Animsition Preloader -->
+  <div class="animsition-preloader">
+    <div>
+      <div class="utf-spinner-two"></div>
+    </div>
+  </div>
+  <!-- Animsition Preloader End -->
+
+  <!-- Main Wrapper -->
+  <div id="main-wrapper">
+    <!-- Header -->
+    <header id="header" class="sticky-top-slide">
+      <!-- Navbar -->
+      <nav class="primary-menu navbar navbar-expand-lg navbar-text-light bg-transparent border-bottom-0">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+          <!-- Logo (SELIM DAWA in LTR Order) -->
+          <div class="logo-wrapper" dir="ltr">
+            <a class="logo d-flex align-items-center text-decoration-none" href="#home" title="Selim Dawa" dir="ltr">
+              <span class="brand-text-first font-weight-800 text-white mr-1">SELIM</span>
+              <span class="brand-text-second font-weight-800 accent-text">DAWA</span>
+            </a>
+          </div>
+
+          <!-- Navigation Links (Center) -->
+          <div id="header-nav" class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item"><a class="nav-link smooth-scroll active" href="#home">الرئيسية</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">من أنا</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#resume">الخبرات</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">المشاريع</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">تواصل معي</a></li>
+            </ul>
+          </div>
+
+          <!-- Right Side Controls (Left in RTL) -->
+          <div class="header-right-controls d-flex align-items-center">
+            <div class="theme-controls-wrapper d-flex align-items-center position-relative">
+              <!-- EN / AR Language Toggle Button -->
+              <button id="lang-toggle-btn" class="lang-btn" type="button" aria-label="Language Toggle" title="Switch to English">
+                <span class="lang-text font-weight-700">EN</span>
+              </button>
+
+              <!-- Color Picker Circle Button -->
+              <button id="color-picker-btn" class="color-circle-btn" type="button" aria-label="Color Picker" title="تغيير اللون"></button>
+
+              <!-- Color Palette Dropdown Menu -->
+              <div id="color-palette-popup" class="color-palette-popup">
+                <div class="color-palette-title">اختر اللون</div>
+                <div class="color-options-grid">
+                  <span class="color-option active" data-theme="S1" data-day="#3C415E" data-night="#999999" style="background-color: #3C415E;" title="S1 - Basic"></span>
+                  <span class="color-option" data-theme="S2" data-day="#1976D2" data-night="#1976D2" style="background-color: #1976D2;" title="S2 - Blue"></span>
+                  <span class="color-option" data-theme="S3" data-day="#F57C00" data-night="#FF9800" style="background-color: #F57C00;" title="S3 - Orange"></span>
+                  <span class="color-option" data-theme="S4" data-day="#C51162" data-night="#C51162" style="background-color: #C51162;" title="S4 - Pink"></span>
+                  <span class="color-option" data-theme="S5" data-day="#8D6E63" data-night="#A1887F" style="background-color: #8D6E63;" title="S5 - Brown"></span>
+                  <span class="color-option" data-theme="S6" data-day="#1B5E20" data-night="#4CAF50" style="background-color: #1B5E20;" title="S6 - Green"></span>
+                  <span class="color-option" data-theme="S7" data-day="#607D8B" data-night="#78909C" style="background-color: #607D8B;" title="S7 - Slate"></span>
+                  <span class="color-option" data-theme="S8" data-day="#3F51B5" data-night="#7986CB" style="background-color: #3F51B5;" title="S8 - Indigo"></span>
+                  <span class="color-option" data-theme="S9" data-day="#006666" data-night="#009688" style="background-color: #009688;" title="S9 - Teal"></span>
+                  <span class="color-option" data-theme="S10" data-day="#800080" data-night="#9C27B0" style="background-color: #800080;" title="S10 - Purple"></span>
+                </div>
+              </div>
+
+              <!-- Dark / Light Mode Single Icon Button -->
+              <button id="theme-toggle-btn" class="theme-btn" type="button" aria-label="Toggle Theme" title="الوضع الليلي / النهاري">
+                <i class="fas fa-moon mode-icon"></i>
+              </button>
+            </div>
+
+            <button class="navbar-toggler mr-2" type="button" data-toggle="collapse"
+              data-target="#header-nav"><span></span><span></span><span></span></button>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
+    <!-- Header End -->
+
+    <!-- Content -->
+    <div id="content" role="main">
+      <!-- Intro / Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="container my-auto">
+          <div class="row align-items-center">
+            <!-- Content Column -->
+            <div class="col-lg-6 text-right">
+              <!-- Subheading Tag -->
+              <div class="hero-subheading d-flex align-items-center mb-3">
+                <span class="theme-bar ml-2"></span>
+                <span class="subheading-text">مرحباً بك، أنا</span>
+              </div>
+
+              <!-- Main Name Title -->
+              <h1 class="hero-main-title font-weight-800 text-white mb-2">
+                سليم <span class="accent-text">ضوا</span>
+              </h1>
+
+              <!-- Subtitle -->
+              <h2 class="hero-subtitle font-weight-700 mb-3">
+                مطور تطبيقات أندرويد
+              </h2>
+
+              <!-- Description -->
+              <p class="hero-description mb-4">
+                أقوم ببرمجة وبناء تطبيقات أندرويد حديثة وسريعة وسهلة الاستخدام بواسطة كوتلن و كومبوز مع قاعدة البينانات الأفضل (فاير بيس). أقوم بتحويل الأفكار إلى منتجات رقمية حقيقية.
+              </p>
+
+              <!-- CTA Buttons -->
+              <div class="hero-buttons d-flex flex-wrap align-items-center mb-4">
+                <a href="#portfolio" class="btn btn-hero-primary smooth-scroll ml-3 mb-2">
+                  <i class="fas fa-arrow-left ml-2 text-white"></i> استكشف المشاريع
+                </a>
+                <a href="https://drive.google.com/file/d/1J3PLHK5p73mD0hjG7YDukYQ058b6rJzZ/view" target="_blank" class="btn btn-hero-secondary mb-2">
+                  <i class="far fa-file-alt ml-2"></i> تحميل السيرة الذاتية
+                </a>
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="hero-tech-badges d-flex flex-wrap align-items-center gap-2">
+                <span class="tech-badge"><i class="fab fa-kickstarter-k accent-text"></i> كوتلن</span>
+                <span class="tech-badge"><i class="fas fa-layer-group accent-text"></i> كومبوز</span>
+                <span class="tech-badge"><i class="fab fa-android accent-text"></i> أندرويد</span>
+                <span class="tech-badge"><i class="fas fa-fire accent-text"></i> فايربيس</span>
+              </div>
+            </div>
+
+            <!-- Visual Mockups Column -->
+            <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center justify-content-center position-relative">
+              <div class="hero-mockups-wrapper d-flex justify-content-center align-items-center">
+                <div class="phone-mockup mockup-1">
+                  <img src="images/screenshots/night_1.jpg" alt="تطبيق أندرويد 1" />
+                </div>
+                <div class="phone-mockup mockup-2">
+                  <img src="images/screenshots/night_2.jpg" alt="تطبيق أندرويد 2" />
+                </div>
+                <div class="phone-mockup mockup-3">
+                  <img src="images/screenshots/night_3.jpg" alt="تطبيق أندرويد 3" />
+                </div>
+              </div>
+
+              <!-- Feature Vertical Tags (Left edge in RTL) -->
+              <div class="hero-feature-list d-none d-xl-flex flex-column justify-content-center">
+                <span class="feature-tag">واجهات نظيفة</span>
+                <span class="feature-tag">تطبيقات مفيدة</span>
+                <span class="feature-tag">تجارب يومية أفضل</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Intro end -->
+
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Right Column: Bio, Stats & Badges -->
+            <div class="col-lg-5 text-right mb-4 mb-lg-0">
+              <div class="about-subheading d-flex align-items-center mb-3">
+                <span class="theme-bar ml-2"></span>
+                <span class="subheading-text">من أنا</span>
+              </div>
+              <h2 class="about-main-title font-weight-800 text-white mb-2">
+                أنا سليم <span class="accent-text">ضوا</span>
+              </h2>
+              <h3 class="about-subtitle text-white-50 font-weight-600 mb-3">
+                مطور تطبيقات أندرويد
+              </h3>
+              <p class="about-description mb-4">
+                مطور أندرويد متخصص في بناء تطبيقات جوال حديثة وعالية الأداء. أركز على حل التحديات البرمجية المعقدة عبر كتابة كود نظيف وقابل للصيانة، وتقديم تجربة مستخدم سلسة ومبتكرة.
+              </p>
+
+              <!-- Stats & GitHub Row -->
+              <div class="about-stats-row d-flex align-items-center gap-3 gap-md-4 mb-4">
+                <div class="stat-item">
+                  <h4 class="stat-number font-weight-800 mb-0"><span class="counter" data-from="0" data-to="6">6</span>+</h4>
+                  <span class="stat-label text-muted">سنوات خبرة</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                  <h4 class="stat-number font-weight-800 mb-0"><span class="counter" data-from="0" data-to="40">40</span>+</h4>
+                  <span class="stat-label text-muted">مشروع مكتمل</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                  <a href="https://github.com/selimdawa" target="_blank" class="stat-github-link">
+                    <h4 class="stat-number font-weight-800 mb-0 d-flex align-items-center"><i class="fab fa-github ml-2"></i> <span dir="ltr">@selimdawa</span></h4>
+                    <span class="stat-label text-muted">ملف جيت هاب <i class="fas fa-external-link-alt mr-1"></i></span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Badges -->
+              <div class="about-badges-row d-flex flex-wrap align-items-center gap-2">
+                <span class="about-badge"><i class="fas fa-shield-alt"></i> حل المشكلات</span>
+                <span class="about-badge"><i class="fas fa-users"></i> التعاون مع الفريق</span>
+                <span class="about-badge"><i class="fas fa-seedling"></i> تعلم مستمر</span>
+              </div>
+            </div>
+
+            <!-- Center Column: Image Card -->
+            <div class="col-lg-3 text-center mb-4 mb-lg-0 position-relative">
+              <div class="about-image-card position-relative mx-auto">
+                <div class="offset-green-frame"></div>
+                <div class="image-inner">
+                  <img src="images/img_profile.jpg" class="img-fluid rounded-image" alt="سليم ضوا" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Left Column (in RTL): Personal Info Card -->
+            <div class="col-lg-4 text-right">
+              <div class="about-info-card p-4 rounded-lg">
+                <h4 class="info-card-title text-white font-weight-700 mb-3 pb-2">
+                  المعلومات الشخصية
+                </h4>
+                <ul class="about-info-list list-unstyled mb-0">
+                  <li>
+                    <span class="icon-box"><i class="far fa-user"></i></span>
+                    <div>
+                      <span class="info-label">الاسم</span>
+                      <span class="info-value">سليم ضوا</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="icon-box"><i class="far fa-envelope"></i></span>
+                    <div>
+                      <span class="info-label">البريد الإلكتروني</span>
+                      <span class="info-value"><a href="mailto:selimdawa@gmail.com">selimdawa@gmail.com</a></span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="icon-box"><i class="fas fa-phone-alt"></i></span>
+                    <div>
+                      <span class="info-label">الهاتف</span>
+                      <span class="info-value"><span dir="ltr">+963 994-683-386</span></span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="icon-box"><i class="far fa-calendar-alt"></i></span>
+                    <div>
+                      <span class="info-label">تاريخ الميلاد</span>
+                      <span class="info-value">28 أيلول / سبتمبر 1998</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="icon-box"><i class="fas fa-map-marker-alt"></i></span>
+                    <div>
+                      <span class="info-label">الإقامة</span>
+                      <span class="info-value">سوريا، حمص</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="icon-box"><i class="fas fa-graduation-cap"></i></span>
+                    <div>
+                      <span class="info-label">الدراسة</span>
+                      <span class="info-value">دورات: يوتيوب ومواقع تعليمية</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="icon-box"><i class="fas fa-briefcase"></i></span>
+                    <div>
+                      <span class="info-label">العمل الحر</span>
+                      <span class="info-value text-success font-weight-600">متاح للعمل</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About end -->
+
+      <!-- Resume / Experience Section -->
+      <section id="resume" class="resume-section section">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="text-right mb-5">
+            <div class="resume-subheading d-flex align-items-center mb-2">
+              <span class="theme-bar ml-2"></span>
+              <span class="subheading-text">سيرتي الذاتية</span>
+            </div>
+            <h2 class="section-title text-white font-weight-800">
+              الخبرات <span class="accent-text">والمهارات</span>
+            </h2>
+          </div>
+
+          <div class="row">
+            <!-- Education Column -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="resume-column-title d-flex align-items-center mb-4">
+                <div class="icon-circle ml-3"><i class="fas fa-graduation-cap"></i></div>
+                <h3 class="text-white font-weight-700 mb-0">التعليم والدورات</h3>
+              </div>
+
+              <!-- Education Item 1 -->
+              <div class="resume-card p-4 mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h4 class="card-title text-white font-weight-700 mb-0 d-flex align-items-center"><span class="theme-bar ml-2"></span>دورات المواقع التعليمية</h4>
+                  <span class="resume-badge">2021 - <span class="accent-text">2023</span></span>
+                </div>
+                <div class="company-name text-muted font-weight-500 mb-3">
+                  جمّال تك (Gammal Tech)
+                </div>
+                <p class="card-text text-muted mb-0">
+                  الدراسة في موقع <a href="https://www.gammal.tech" target="_blank" class="accent-link font-weight-600">gammal.tech</a>:
+                  <span class="tech-inline-tag">C</span>
+                  <span class="tech-inline-tag">C++</span>
+                  <span class="tech-inline-tag">JavaScript</span>
+                  <span class="tech-inline-tag">Python</span>
+                  <span class="tech-inline-tag">Algorithms</span>
+                  <span class="tech-inline-tag">Data Structures</span>
+                  <span class="tech-inline-tag">OOP</span>
+                </p>
+              </div>
+
+              <!-- Education Item 2 -->
+              <div class="resume-card p-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h4 class="card-title text-white font-weight-700 mb-0 d-flex align-items-center"><span class="theme-bar ml-2"></span>دورات اليوتيوب والتعلم الذاتي</h4>
+                  <span class="resume-badge">2019 - <span class="accent-text">2023</span></span>
+                </div>
+                <div class="company-name text-muted font-weight-500 mb-3">
+                  قنوات اليوتيوب
+                </div>
+                <p class="card-text text-muted mb-0 leading-relaxed">
+                  <a href="https://www.youtube.com/@ProgrammingAdvices" target="_blank" class="accent-link font-weight-600">Programming Advices</a>
+                  <span class="text-light-50">(Algorithms, C++, Roadmap)</span>،
+                  <a href="https://www.youtube.com/@AndroidCoding" target="_blank" class="accent-link font-weight-600">Android Coding</a>
+                  <span class="text-light-50">(Git, GitHub, Agile)</span>،
+                  <a href="https://www.youtube.com/@cwn" target="_blank" class="accent-link font-weight-600">Coding with Nerds</a>
+                  <span class="text-light-50">(Kotlin, Architecture Patterns)</span>،
+                  <a href="https://www.youtube.com/@AtifSayings" target="_blank" class="accent-link font-weight-600">Atif Pervaiz</a> &amp;
+                  <a href="https://www.youtube.com/@PhilippLackner" target="_blank" class="accent-link font-weight-600">Philipp Lackner</a>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Experience Column -->
+            <div class="col-lg-6">
+              <div class="resume-column-title d-flex align-items-center mb-4">
+                <div class="icon-circle ml-3"><i class="fas fa-briefcase"></i></div>
+                <h3 class="text-white font-weight-700 mb-0">الخبرة العمليّة</h3>
+              </div>
+
+              <!-- Experience Item 1 -->
+              <div class="resume-card p-4 mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h4 class="card-title text-white font-weight-700 mb-0 d-flex align-items-center"><span class="theme-bar ml-2"></span>تطبيقات بلغة جافا (Java)</h4>
+                  <span class="resume-badge">2021 - <span class="accent-text">2022</span></span>
+                </div>
+                <div class="company-name text-muted font-weight-500 mb-3">
+                  أندرويد ستوديو
+                </div>
+                <p class="card-text text-muted mb-0">
+                  تطوير تطبيقات أندرويد باستخدام لغة جافا:
+                  <span class="tech-inline-tag">RecyclerView</span>
+                  <span class="tech-inline-tag">Glide</span>
+                  <span class="tech-inline-tag">Picasso</span>
+                  <span class="tech-inline-tag">Firebase</span>
+                  <span class="tech-inline-tag">ExoPlayer</span>
+                  <span class="tech-inline-tag">Retrofit2</span>
+                  <span class="tech-inline-tag">GSON</span>
+                  <span class="tech-inline-tag">View Binding</span>
+                </p>
+              </div>
+
+              <!-- Experience Item 2 -->
+              <div class="resume-card p-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h4 class="card-title text-white font-weight-700 mb-0 d-flex align-items-center"><span class="theme-bar ml-2"></span>تطبيقات بلغة كوتلن (Kotlin)</h4>
+                  <span class="resume-badge">2022 - <span class="accent-text">2026</span></span>
+                </div>
+                <div class="company-name text-muted font-weight-500 mb-3">
+                  أندرويد ستوديو
+                </div>
+                <p class="card-text text-muted mb-0">
+                  تطوير تطبيقات الأندرويد العصرية بلغة كوتلن وأحدث المكتبات:
+                  <span class="tech-inline-tag">Jetpack Compose</span>
+                  <span class="tech-inline-tag">Coroutines &amp; Flow</span>
+                  <span class="tech-inline-tag">Dagger-Hilt</span>
+                  <span class="tech-inline-tag">MVVM &amp; MVI</span>
+                  <span class="tech-inline-tag">Clean Architecture</span>
+                  <span class="tech-inline-tag">Room DB</span>
+                  <span class="tech-inline-tag">Coil3</span>
+                  <span class="tech-inline-tag">Navigation Component</span>
+                  <span class="tech-inline-tag">Ktor &amp; Retrofit2</span>
+                  <span class="tech-inline-tag">OkHttp</span>
+                  <span class="tech-inline-tag">DataStore</span>
+                  <span class="tech-inline-tag">WorkManager</span>
+                  <span class="tech-inline-tag">Paging 3</span>
+                  <span class="tech-inline-tag">Material 3</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Section -->
+          <div class="mt-5 pt-3">
+            <div class="resume-column-title d-flex align-items-center mb-4">
+              <div class="icon-circle ml-3"><i class="fas fa-tools"></i></div>
+              <h3 class="text-white font-weight-700 mb-0">المهارات التقنية</h3>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-lg-4 mb-3">
+                <div class="skill-card p-3 rounded-lg">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span class="skill-name text-white font-weight-600">كوتلن (Kotlin)</span>
+                    <span class="skill-percent accent-text font-weight-700">85%</span>
+                  </div>
+                  <div class="progress progress-custom">
+                    <div class="progress-bar progress-bar-accent" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 mb-3">
+                <div class="skill-card p-3 rounded-lg">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span class="skill-name text-white font-weight-600">جت باك كومبوز (Jetpack Compose)</span>
+                    <span class="skill-percent accent-text font-weight-700">80%</span>
+                  </div>
+                  <div class="progress progress-custom">
+                    <div class="progress-bar progress-bar-accent" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 mb-3">
+                <div class="skill-card p-3 rounded-lg">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span class="skill-name text-white font-weight-600">XML</span>
+                    <span class="skill-percent accent-text font-weight-700">90%</span>
+                  </div>
+                  <div class="progress progress-custom">
+                    <div class="progress-bar progress-bar-accent" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 mb-3">
+                <div class="skill-card p-3 rounded-lg">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span class="skill-name text-white font-weight-600">فايربيس (Firebase)</span>
+                    <span class="skill-percent accent-text font-weight-700">80%</span>
+                  </div>
+                  <div class="progress progress-custom">
+                    <div class="progress-bar progress-bar-accent" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 mb-3">
+                <div class="skill-card p-3 rounded-lg">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span class="skill-name text-white font-weight-600">جافا (Java)</span>
+                    <span class="skill-percent accent-text font-weight-700">80%</span>
+                  </div>
+                  <div class="progress progress-custom">
+                    <div class="progress-bar progress-bar-accent" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 mb-3">
+                <div class="skill-card p-3 rounded-lg">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span class="skill-name text-white font-weight-600">تطوير الويب (Web Development)</span>
+                    <span class="skill-percent accent-text font-weight-700">65%</span>
+                  </div>
+                  <div class="progress progress-custom">
+                    <div class="progress-bar progress-bar-accent" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Resume end -->
+
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="portfolio-section section">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="text-right mb-5">
+            <div class="portfolio-subheading d-flex align-items-center mb-2">
+              <span class="theme-bar ml-2"></span>
+              <span class="subheading-text">معرض أعمالي</span>
+            </div>
+            <h2 class="section-title text-white font-weight-800">
+              التطبيقات <span class="accent-text">والمواقع</span>
+            </h2>
+          </div>
+
+          <!-- Portfolio Filter Menu -->
+          <ul class="utf-portfolio-filter-menu nav mb-4 justify-content-center">
+            <li class="nav-item"> <a data-filter="*" class="nav-link active" href="#">الكل</a></li>
+            <li class="nav-item"> <a data-filter=".android" href="#" class="nav-link">أندرويد</a></li>
+            <li class="nav-item"> <a data-filter=".kotlin" href="#" class="nav-link">كوتلن</a></li>
+            <li class="nav-item"> <a data-filter=".compose" href="#" class="nav-link">كومبوز</a></li>
+            <li class="nav-item"> <a data-filter=".java" href="#" class="nav-link">جافا</a></li>
+            <li class="nav-item"> <a data-filter=".web" href="#" class="nav-link">ويب</a></li>
+          </ul>
+
+          <div class="portfolio utf-popup-gallery-item">
+            <div class="row utf-portfolio-filter-item">
+
+              <!-- Project 1: Little Beauty -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 android java kotlin">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-1.png" alt="Little Beauty" />
+                  </div>
+                  <div class="mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Little Beauty</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    تطبيق صيدلية خاصة لمنتجات العناية بالبشرة والشعر، يحتوي على أقسام، مستخدمين، ومفضلة.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/LittleBeautyKotlin/releases/download/1.22v/Little.Beauty.apk" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a href="https://github.com/selimdawa/BeautyTouch" target="_blank" class="avatar-circle-link mr-2" title="GitHub Java">
+                        <img src="images/Java.png" alt="Java Repo" />
+                      </a>
+                      <a href="https://github.com/selimdawa/BeautyTouchKotlin" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin">
+                        <img src="images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                    </div>
+                    <a href="https://github.com/selimdawa/BeautyTouchKotlin" target="_blank" class="project-arrow-btn" title="عرض التفاصيل">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 2: Little Books -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 android java kotlin">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-2.png" alt="Little Books" />
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Little Books</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    تطبيق أنيق لتتبع رحلة قراءتك وتنظيم الكتب، يحتوي على دور نشر، تصنيفات، وقائمة مفضلة.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/LittleBooksKotlin/releases/download/1.41v/Little.Books.apk" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleBooks" target="_blank" class="avatar-circle-link mr-2" title="GitHub Java">
+                        <img src="images/Java.png" alt="Java Repo" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleBooksKotlin" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin">
+                        <img src="images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                    </div>
+                    <a href="https://github.com/selimdawa/LittleBooksKotlin" target="_blank" class="project-arrow-btn" title="عرض التفاصيل">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3: Little Tasks -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 android java kotlin">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-3.png" alt="Little Tasks" />
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Little Tasks</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    تطبيق لتنظيم وإدارة المهام اليومية بمرونة وسرعة مع إمكانية تعديلها وحذفها بسهولة.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/LittleTasksKotlin/releases/download/1.39v/Little.Tasks.apk" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleTasks" target="_blank" class="avatar-circle-link mr-2" title="GitHub Java">
+                        <img src="images/Java.png" alt="Java Repo" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleTasksKotlin" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin">
+                        <img src="images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                    </div>
+                    <a href="https://github.com/selimdawa/LittleTasksKotlin" target="_blank" class="project-arrow-btn" title="عرض التفاصيل">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 4: Little Note -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 android java kotlin compose">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-4.png" alt="Little Note" />
+                  </div>
+                  <div class="mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Little Note</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    تطبيق ملاحظات أفكار سريع وآمن لحفظ واسترجاع الملاحظات بسهولة.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/LittleNoteKotlin/releases/download/1.32v/Little.Note.apk" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleNote" target="_blank" class="avatar-circle-link mr-2" title="GitHub Java">
+                        <img src="images/Java.png" alt="Java Repo" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleNoteKotlin" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin">
+                        <img src="images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleNoteCompose" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin Compose">
+                        <img src="images/kotlin.png" alt="Kotlin Compose Repo" />
+                      </a>
+                    </div>
+                    <a href="https://github.com/selimdawa/LittleNoteCompose" target="_blank" class="project-arrow-btn" title="عرض التفاصيل">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 5: Little Music -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 android java kotlin">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-5.png" alt="Little Music" />
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Little Music</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    تطبيق مشغل موسيقى أنيق للاستماع للأغاني عبر الإنترنت وتصنيفها بسهولة.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/LittleMusicKotlin/releases/download/1.43v/Little.Music.apk" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleMusic" target="_blank" class="avatar-circle-link mr-2" title="GitHub Java">
+                        <img src="images/Java.png" alt="Java Repo" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleMusicKotlin" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin">
+                        <img src="images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                    </div>
+                    <a href="https://github.com/selimdawa/LittleMusicKotlin" target="_blank" class="project-arrow-btn" title="عرض التفاصيل">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 6: Little Movie -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 android java kotlin">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-6.png" alt="Little Movie" />
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Little Movie</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    تطبيق لتصفح واستكشاف الأفلام وتنظيم قوائم المشاهدة الخاصة بك.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/LittleMovieKotlin/releases/download/1.36v/Little.Movie.apk" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleMovie" target="_blank" class="avatar-circle-link mr-2" title="GitHub Java">
+                        <img src="images/Java.png" alt="Java Repo" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittleMovieKotlin" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin">
+                        <img src="images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                    </div>
+                    <a href="https://github.com/selimdawa/LittleMovieKotlin" target="_blank" class="project-arrow-btn" title="عرض التفاصيل">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 7: Simple Multi Apps -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 android java kotlin">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-7.png" alt="Simple Multi Apps" />
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Simple Multi Apps</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    تطبيق يضم حزمة من 12 أداة وتطبيق مصغر مفيد (مؤقت، مشغل فيديو، قارئ PDF وغيرها).
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/SimpleMultiAppsKotlin/releases/download/1.37v/SMA.apk" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a href="https://github.com/selimdawa/SimpleMultiApps" target="_blank" class="avatar-circle-link mr-2" title="GitHub Java">
+                        <img src="images/Java.png" alt="Java Repo" />
+                      </a>
+                      <a href="https://github.com/selimdawa/SimpleMultiAppsKotlin" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin">
+                        <img src="images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                    </div>
+                    <a href="https://github.com/selimdawa/SimpleMultiAppsKotlin" target="_blank" class="project-arrow-btn" title="عرض التفاصيل">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 8: Little Player -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 android java kotlin">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-8.png" alt="Little Player" />
+                  </div>
+                  <div class="mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Little Player</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    تطبيق مشغل صوتيات محلي للاستماع لملفات الصوت في الخلفية بسلاسة.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/Private-Apps" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a href="https://github.com/selimdawa/LittlePlayer" target="_blank" class="avatar-circle-link mr-2" title="GitHub Java">
+                        <img src="images/Java.png" alt="Java Repo" />
+                      </a>
+                      <a href="https://github.com/selimdawa/Private-Apps" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin">
+                        <img src="images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                    </div>
+                    <a href="https://github.com/selimdawa/Private-Apps" target="_blank" class="project-arrow-btn" title="عرض التفاصيل">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 9: Simple Advanced Apps -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 android kotlin">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-9.png" alt="Simple Advanced Apps" />
+                  </div>
+                  <div class="mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Simple Advanced Apps</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    تطبيق يضم حزمة من 15 تطبيق كوتلن متقدم يستعرض MVVM, Hilt, Room, Coroutines ومكونات Jetpack.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/SimpleAdvancedAppsKotlin/releases/download/1.09v/SAA.apk" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a href="https://github.com/selimdawa/SimpleAdvancedAppsKotlin" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin">
+                        <img src="images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                    </div>
+                    <a href="https://github.com/selimdawa/SimpleAdvancedAppsKotlin" target="_blank" class="project-arrow-btn" title="عرض التفاصيل">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 10: Simple Compose Apps -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 android kotlin compose">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-13.png" alt="Simple Compose Apps" />
+                  </div>
+                  <div class="mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Simple Compose Apps</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    تطبيق يضم حزمة من 25 تطبيق أندرويد مبنية بـ Jetpack Compose توضح بناء الواجهات الحديثة، الأنيميشن، وإدارة الحالة.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/SimpleComposeApps/releases/download/1.0.7v/SCA.apk" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a href="https://github.com/selimdawa/SimpleComposeApps" target="_blank" class="avatar-circle-link mr-2" title="GitHub Kotlin Compose">
+                        <img src="images/kotlin.png" alt="Kotlin Compose Repo" />
+                      </a>
+                    </div>
+                    <a href="https://github.com/selimdawa/SimpleComposeApps" target="_blank" class="project-arrow-btn" title="عرض التفاصيل">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 11: jQuery Animation Web -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 web">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-10.png" alt="jQuery Pages" />
+                  </div>
+                  <div class="mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">jQuery Animation</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    صفحات ويب تفاعلية بسلاسة وأنيميشن باستخدام مكتبة jQuery و CSS3.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/jQuary" target="_blank" class="avatar-circle-link" title="GitHub Repo">
+                        <img src="images/web.png" alt="Web Repo" />
+                      </a>
+                      <a href="https://selimdawa.github.io/jQuary/index.html" target="_blank" class="avatar-circle-link mr-2" title="معاينة مباشرة">
+                        <img src="images/live.png" alt="Live Demo" />
+                      </a>
+                    </div>
+                    <a href="https://selimdawa.github.io/jQuary/index.html" target="_blank" class="project-arrow-btn" title="معاينة مباشرة">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 12: Little Company Web Native -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 web">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-11.png" alt="Little Company Web" />
+                  </div>
+                  <div class="mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Company Web Native</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    موقع شركة ناشئة حديث يتضمن الخدمات، فريق العمل، ونموذج التراسل.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/LittleCompanyWebNative" target="_blank" class="avatar-circle-link" title="GitHub Repo">
+                        <img src="images/web.png" alt="Web Repo" />
+                      </a>
+                      <a href="https://selimdawa.github.io/LittleCompanyWebNative/index.html" target="_blank" class="avatar-circle-link mr-2" title="معاينة مباشرة">
+                        <img src="images/live.png" alt="Live Demo" />
+                      </a>
+                    </div>
+                    <a href="https://selimdawa.github.io/LittleCompanyWebNative/index.html" target="_blank" class="project-arrow-btn" title="معاينة مباشرة">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 13: Little Company React -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4 web">
+                <div class="portfolio-card p-3 text-right">
+                  <div class="card-img-wrapper mb-3">
+                    <img src="images/projects/project-12.png" alt="Little Company React" />
+                  </div>
+                  <div class="mb-2">
+                    <h5 class="project-title text-white font-weight-700 mb-0">Little Company React</h5>
+                  </div>
+                  <p class="project-description text-muted mb-3">
+                    موقع شركة تفاعلي أُنشئ باستخدام إطار عمل React وأقسام متعددة.
+                  </p>
+                  <div class="card-footer-row d-flex align-items-center justify-content-between pt-3">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a href="https://github.com/selimdawa/LittleCompanyReact" target="_blank" class="avatar-circle-link" title="GitHub Repo">
+                        <img src="images/web.png" alt="Web Repo" />
+                      </a>
+                      <a href="https://selimdawa.github.io/LittleCompanyReact" target="_blank" class="avatar-circle-link mr-2" title="معاينة مباشرة">
+                        <img src="images/live.png" alt="Live Demo" />
+                      </a>
+                    </div>
+                    <a href="https://selimdawa.github.io/LittleCompanyReact" target="_blank" class="project-arrow-btn" title="معاينة مباشرة">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Portfolio end -->
+
+      <!-- Contact Me Section -->
+      <section id="contact" class="contact-section section">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="text-right mb-5">
+            <div class="contact-subheading d-flex align-items-center mb-2">
+              <span class="theme-bar ml-2"></span>
+              <span class="subheading-text">تواصل معي</span>
+            </div>
+            <h2 class="section-title text-white font-weight-800">
+              إتصل <span class="accent-text">بي</span>
+            </h2>
+          </div>
+
+          <div class="row">
+            <!-- Address Info Card -->
+            <div class="col-lg-5 col-xl-4 mb-4 mb-lg-0">
+              <div class="contact-info-card p-4">
+                <div class="card-title-header text-right mb-4">
+                  <h3 class="card-title text-white font-weight-700">معلومات التواصل</h3>
+                </div>
+
+                <ul class="contact-info-list list-unstyled mb-4 text-right">
+                  <li class="d-flex align-items-start mb-3">
+                    <div class="contact-icon-box ml-3">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                      <span class="info-label text-muted d-block">الموقع</span>
+                      <span class="info-value text-white font-weight-500">سوريا، حمص، وادي الذهب</span>
+                    </div>
+                  </li>
+
+                  <li class="d-flex align-items-start mb-3">
+                    <div class="contact-icon-box ml-3">
+                      <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                      <span class="info-label text-muted d-block">الهاتف</span>
+                      <a href="tel:+963994683386" class="info-value text-white font-weight-500"><span dir="ltr">+963 994-683-386</span></a>
+                    </div>
+                  </li>
+
+                  <li class="d-flex align-items-start mb-3">
+                    <div class="contact-icon-box ml-3">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                      <span class="info-label text-muted d-block">البريد الإلكتروني</span>
+                      <a href="mailto:selimdawa@gmail.com" class="info-value text-white font-weight-500">selimdawa@gmail.com</a>
+                    </div>
+                  </li>
+
+                  <li class="d-flex align-items-start mb-3">
+                    <div class="contact-icon-box ml-3">
+                      <i class="fas fa-globe"></i>
+                    </div>
+                    <div>
+                      <span class="info-label text-muted d-block">الموقع الإلكتروني</span>
+                      <a href="https://selimdawa.github.io/portfolio" target="_blank" class="info-value text-white font-weight-500">selimdawa.github.io/portfolio</a>
+                    </div>
+                  </li>
+                </ul>
+
+                <h4 class="social-title text-white font-weight-600 mb-3 text-right">تابعني على</h4>
+                <div class="contact-social-icons d-flex flex-wrap text-right">
+                  <a href="https://www.facebook.com/profile.php?id=100075460898489" target="_blank" class="social-circle-btn ml-2 mb-2" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.linkedin.com/in/selim-dawa-57036b199" target="_blank" class="social-circle-btn ml-2 mb-2" title="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://play.google.com/store/apps/developer?id=SAO+Apps" target="_blank" class="social-circle-btn ml-2 mb-2" title="جوجل بلاي"><i class="fab fa-google-play"></i></a>
+                  <a href="mailto:selimdawa@gmail.com" class="social-circle-btn ml-2 mb-2" title="البريد الإلكتروني"><i class="fab fa-google"></i></a>
+                  <a href="https://wa.me/963994683386" target="_blank" class="social-circle-btn ml-2 mb-2" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                  <a href="https://www.github.com/selimdawa" target="_blank" class="social-circle-btn ml-2 mb-2" title="جيت هاب"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form Card -->
+            <div class="col-lg-7 col-xl-8">
+              <div class="contact-form-card p-4">
+                <div class="card-title-header text-right mb-4">
+                  <h3 class="card-title text-white font-weight-700">تواصل معي الآن</h3>
+                </div>
+                <form id="contact-form" method="post">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group mb-0">
+                        <input name="name" type="text" class="form-control custom-dark-input" required placeholder="الاسم الكامل">
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group mb-0">
+                        <input name="email" type="email" class="form-control custom-dark-input" required placeholder="البريد الإلكتروني">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group mb-0">
+                        <input name="number" type="tel" class="form-control custom-dark-input" required placeholder="رقم الهاتف">
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="form-group mb-0">
+                        <input name="subject" type="text" class="form-control custom-dark-input" required placeholder="الموضوع">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-4">
+                    <textarea name="form-message" class="form-control custom-dark-input" rows="5" required placeholder="كيف يمكنني مساعدتك؟"></textarea>
+                  </div>
+                  <button id="submit-btn" class="btn btn-hero-primary d-inline-flex align-items-center justify-content-center border-0 px-4 py-3 font-weight-600" type="submit">
+                    <span>إرسال الرسالة</span>
+                    <i class="fas fa-paper-plane mr-2"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Me end -->
+    </div>
+    <!-- Content end -->
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer-custom py-4">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-center text-md-right">
+          <p class="copyright-text mb-2 mb-md-0">© 2026 <span dir="ltr">Selim Dawa</span>. جميع الحقوق محفوظة.</p>
+          <p class="built-with-text mb-0">بُني بـ <span class="heart-icon">❤️</span> باستخدام كوتلن وأندرويد</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer end -->
+  </div>
+  <!-- Main Wrapper End -->
+
+  <!-- Back to Top -->
+  <a id="back-to-top" class="rounded" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="plugins/jquery.easing/jquery.easing.min.js"></script>
+  <script src="plugins/jquery.appear/jquery.appear.min.js"></script>
+  <script src="plugins/jquery.countTo/jquery.countTo.min.js"></script>
+  <script src="plugins/parallaxie/parallaxie.min.js"></script>
+  <script src="plugins/typed/typed.min.js"></script>
+  <script src="plugins/owl.carousel/owl.carousel.min.js"></script>
+  <script src="plugins/isotope/isotope.pkgd.min.js"></script>
+  <script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="js/custom-jquery.js"></script>
+</body>
+
+</html>

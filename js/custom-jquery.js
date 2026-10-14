@@ -208,9 +208,9 @@
     langBtn.on("click", function () {
       var currentLang = langText.text().trim();
       if (currentLang === "AR") {
-        langText.text("EN");
-      } else {
-        langText.text("AR");
+        window.location.href = "index_ar.html";
+      } else if (currentLang === "EN") {
+        window.location.href = "index.html";
       }
     });
   });
