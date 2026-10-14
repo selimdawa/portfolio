@@ -223,13 +223,13 @@
 
     function applyTheme(isLight) {
       if (isLight) {
-        $("body").addClass("light-mode");
+        $("html, body").addClass("light-mode");
         themeIcon.removeClass("fa-moon").addClass("fa-sun");
         $(".phone-mockup.mockup-1 img").attr("src", "images/screenshots/light_1.jpg");
         $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/light_2.jpg");
         $(".phone-mockup.mockup-3 img").attr("src", "images/screenshots/light_3.jpg");
       } else {
-        $("body").removeClass("light-mode");
+        $("html, body").removeClass("light-mode");
         themeIcon.removeClass("fa-sun").addClass("fa-moon");
         $(".phone-mockup.mockup-1 img").attr("src", "images/screenshots/night_1.jpg");
         $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/night_2.jpg");
@@ -247,7 +247,7 @@
     }
 
     themeBtn.on("click", function () {
-      var isLight = $("body").toggleClass("light-mode").hasClass("light-mode");
+      var isLight = !$("body").hasClass("light-mode");
       applyTheme(isLight);
       localStorage.setItem("portfolio_theme", isLight ? "light" : "dark");
     });

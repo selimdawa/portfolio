@@ -68,9 +68,9 @@ $header-bg-dark:         $alpha-black-95;
 $popup-bg-dark:          $alpha-popup-dark;
 $border-dark:            $alpha-white-10;
 $border-dark-subtle:     $alpha-white-08;
-$text-dark-main:         $color-slate-50;
-$text-dark-sub:          $color-slate-400;
-$text-dark-muted:        $color-slate-500;
+$text-dark-main:         #ffffff;
+$text-dark-sub:          rgba(255, 255, 255, 0.88);
+$text-dark-muted:        rgba(255, 255, 255, 0.65);
 
 $bg-light:               $color-slate-50;
 $card-bg-light:          $alpha-white-95;
