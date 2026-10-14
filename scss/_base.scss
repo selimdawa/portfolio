@@ -102,7 +102,7 @@ html, body {
   height: 42px;
   background: var(--primary-color) !important;
   border: 1px solid var(--primary-color) !important;
-  color: #ffffff !important;
+  color: $color-white !important;
   border-radius: 12px;
   @include flex-center;
   cursor: pointer;
@@ -112,7 +112,7 @@ html, body {
 
   i {
     display: inline-block !important;
-    color: #ffffff !important;
+    color: $color-white !important;
   }
 
   &:hover {
@@ -122,7 +122,7 @@ html, body {
     transform: translateY(-3px);
 
     i {
-      color: #ffffff !important;
+      color: $color-white !important;
     }
   }
 }
@@ -130,14 +130,14 @@ html, body {
 body.light-mode #back-to-top {
   background: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
-  color: #ffffff !important;
+  color: $color-white !important;
 
   i {
-    color: #ffffff !important;
+    color: $color-white !important;
   }
 
   &:hover {
     background: var(--primary-color) !important;
-    color: #ffffff !important;
+    color: $color-white !important;
   }
 }

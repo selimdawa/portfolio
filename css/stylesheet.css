@@ -51,6 +51,27 @@ body {
 	width: 100% !important;
 }
 
+/* Text Selection Styling (Ensure selected text turns white and readable) */
+::selection {
+  background: var(--primary-color);
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+::-moz-selection {
+  background: var(--primary-color);
+  color: #ffffff !important;
+}
+
+/* Ensure accent-text inside primary background or buttons turns white to maintain contrast */
+.bg-primary .accent-text,
+.btn .accent-text,
+.btn-hero-primary .accent-text,
+.btn-primary .accent-text,
+button .accent-text {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
 /* ==========================================================================
    Modern Dynamic Custom Scrollbar (Theme & Mode Dynamic)
    ========================================================================== */
@@ -4097,7 +4118,7 @@ svg:not(:root) {
   align-items: center;
   gap: 10px;
   padding: 5px 14px;
-  background: var(--popup-bg-dark);
+  background: transparent !important;
   border: 1px solid var(--border-dark) !important;
   border-radius: 30px;
   transition: all 0.3s ease;
@@ -4105,7 +4126,7 @@ svg:not(:root) {
 
 /* Light mode wrapper border & background */
 body.light-mode .theme-controls-wrapper {
-  background: var(--popup-bg-light);
+  background: transparent !important;
   border: 1px solid var(--border-light) !important;
 }
 
@@ -4275,8 +4296,8 @@ body.light-mode .color-option.active {
 /* Custom Header Navbar Toggler (Hamburger 3-lines button) - Mobile Only */
 @media (max-width: 991px) {
   .navbar-toggler {
-    background: var(--border-dark) !important;
-    border: 1px solid var(--border-dark) !important;
+    background: transparent !important;
+    border: none !important;
     border-radius: 10px !important;
     width: 36px !important;
     height: 36px !important;
@@ -4313,24 +4334,21 @@ body.light-mode .color-option.active {
   .navbar-toggler span:nth-child(3) { transform: translateY(5px) !important; }
 
   /* Perfectly Centered X when navbar menu is open */
-  .navbar-toggler.show span:nth-child(1),
-  .navbar-toggler:not(.collapsed) span:nth-child(1) {
+  .navbar-toggler.show span:nth-child(1) {
     transform: translateY(0) rotate(45deg) !important;
   }
 
-  .navbar-toggler.show span:nth-child(2),
-  .navbar-toggler:not(.collapsed) span:nth-child(2) {
+  .navbar-toggler.show span:nth-child(2) {
     opacity: 0 !important;
   }
 
-  .navbar-toggler.show span:nth-child(3),
-  .navbar-toggler:not(.collapsed) span:nth-child(3) {
+  .navbar-toggler.show span:nth-child(3) {
     transform: translateY(0) rotate(-45deg) !important;
   }
 
   body.light-mode .navbar-toggler {
-    background: var(--border-light) !important;
-    border: 1px solid var(--border-light) !important;
+    background: transparent !important;
+    border: none !important;
   }
 
   body.light-mode .navbar-toggler span,
@@ -4472,18 +4490,14 @@ button[type="submit"] *,
 .btn-hero-primary i,
 .btn-primary i,
 button[type="submit"] i,
-#submit-btn i,
-body.light-mode .btn-hero-primary,
-body.light-mode .btn-primary,
-body.light-mode button[type="submit"],
-body.light-mode #submit-btn,
-body.light-mode .btn-hero-primary *,
-body.light-mode .btn-primary *,
-body.light-mode button[type="submit"] *,
-body.light-mode #submit-btn * {
+#submit-btn i {
   color: #ffffff !important;
   fill: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .btn-hero-primary:hover,
@@ -4493,13 +4507,32 @@ button[type="submit"]:hover,
 body.light-mode .btn-hero-primary:hover,
 body.light-mode .btn-primary:hover,
 body.light-mode button[type="submit"]:hover,
-body.light-mode #submit-btn:hover,
+body.light-mode #submit-btn:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.btn-hero-primary:hover *,
+.btn-primary:hover *,
+button[type="submit"]:hover *,
+#submit-btn:hover *,
+.btn-hero-primary:focus *,
+.btn-primary:focus *,
+button[type="submit"]:focus *,
+#submit-btn:focus *,
 body.light-mode .btn-hero-primary:hover *,
 body.light-mode .btn-primary:hover *,
 body.light-mode button[type="submit"]:hover *,
 body.light-mode #submit-btn:hover * {
+  background-color: transparent !important;
+  background: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
   transform: none !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
   color: #ffffff !important;
   fill: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
@@ -4698,20 +4731,23 @@ body.light-mode #submit-btn:hover * {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.15) !important;
+  color: var(--primary-color) !important;
   writing-mode: vertical-rl;
   text-transform: uppercase;
+  pointer-events: none;
   transition: none !important;
 }
 
 .feature-tag:hover {
-  color: rgba(255, 255, 255, 0.15) !important;
+  color: var(--primary-color) !important;
   transform: none !important;
+  pointer-events: none;
 }
 
 body.light-mode .feature-tag,
 body.light-mode .feature-tag:hover {
-  color: rgba(0, 0, 0, 0.15) !important;
+  color: var(--primary-color) !important;
+  pointer-events: none;
 }
 
 @media (max-width: 1200px) {
@@ -5146,7 +5182,7 @@ body.light-mode .about-badge {
 }
 
 body.light-mode .about-image-card .image-inner {
-  border: 1.5px solid #ffffff !important;
+  border: 2px solid #ffffff !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
 }
 

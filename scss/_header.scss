@@ -129,15 +129,15 @@ body.light-mode .navbar-toggler {
   align-items: center;
   gap: 10px;
   padding: 5px 14px;
-  background: $alpha-dark-pill-bg;
-  border: 1px solid $color-white !important;
+  background: transparent !important;
+  border: 1px solid var(--border-dark) !important;
   border-radius: 30px;
   position: relative;
 }
 
 body.light-mode .theme-controls-wrapper {
-  background: $alpha-light-pill-bg;
-  border: 1px solid $color-black !important;
+  background: transparent !important;
+  border: 1px solid var(--border-light) !important;
 }
 
 // Language Toggle Button (Text-Only)

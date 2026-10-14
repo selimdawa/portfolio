@@ -134,6 +134,6 @@ body.light-mode .btn-hero-outline {
 
 body.light-mode .phone-mockup {
   background: $color-white;
-  border: 1.5px solid #ffffff !important;
+  border: 1.5px solid $color-white !important;
   box-shadow: 0 20px 40px $alpha-black-15;
 }
