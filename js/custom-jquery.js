@@ -200,24 +200,61 @@
     return false;
   });
 
-  // Language Toggle Button (AR / EN)
+  // Language Toggle Button (AR / EN) - Handles Local (Live Server) & GitHub Pages
   $(function () {
     var langBtn = $("#lang-toggle-btn");
     var langText = langBtn.find(".lang-text");
+    var path = window.location.pathname;
+
+    // Set saved language based on current path
+    if (path.indexOf("/ar/") !== -1) {
+      localStorage.setItem("portfolio_lang", "ar");
+    } else if (path.indexOf("/en/") !== -1) {
+      localStorage.setItem("portfolio_lang", "en");
+    }
 
     langBtn.on("click", function () {
       var currentLang = langText.text().trim();
+      var host = window.location.hostname;
+      var path = window.location.pathname;
+
       if (currentLang === "AR") {
-        if (window.location.pathname.indexOf("/EN/") !== -1) {
-          window.location.href = "https://selimdawa.github.io/AR/portfolio/";
+        localStorage.setItem("portfolio_lang", "ar");
+        if (host === "localhost" || host === "127.0.0.1") {
+          if (path.indexOf("/en/") !== -1) {
+            window.location.href = path.replace("/en/", "/ar/");
+          } else if (path.indexOf("/ar/") === -1) {
+            window.location.href = "ar/";
+          } else {
+            window.location.href = "../ar/";
+          }
         } else {
-          window.location.href = "index_ar.html";
+          if (path.indexOf("/en/") !== -1) {
+            window.location.href = path.replace("/en/", "/ar/");
+          } else if (path.indexOf("/portfolio/") !== -1 && path.indexOf("/ar/") === -1) {
+            window.location.href = "https://selimdawa.github.io/portfolio/ar/";
+          } else {
+            window.location.href = "../ar/";
+          }
         }
       } else if (currentLang === "EN") {
-        if (window.location.pathname.indexOf("/AR/") !== -1) {
-          window.location.href = "https://selimdawa.github.io/portfolio/";
+        localStorage.setItem("portfolio_lang", "en");
+        if (host === "localhost" || host === "127.0.0.1") {
+          if (path.indexOf("/ar/") !== -1) {
+            window.location.href = path.replace("/ar/", "/en/");
+          } else if (path.indexOf("/en/") === -1) {
+            window.location.href = "en/";
+          } else {
+            window.location.href = "../en/";
+          }
         } else {
-          window.location.href = "index.html";
+          if (path.indexOf("/ar/") !== -1) {
+            window.location.href = path.replace("/ar/", "/en/");
+          } else if (path.indexOf("/portfolio/") !== -1 && path.indexOf("/en/") === -1) {
+            window.location.href = "https://selimdawa.github.io/portfolio/en/";
+          } else {
+            window.location.href = "../en/";
+          }
         }
       }
     });
@@ -230,18 +267,19 @@
     var themeIcon = themeBtn.find(".mode-icon");
 
     function applyTheme(isLight) {
+      var imgPrefix = (window.location.pathname.indexOf("/ar/") !== -1 || window.location.pathname.indexOf("/en/") !== -1) ? "../" : "";
       if (isLight) {
         $("html, body").addClass("light-mode");
         themeIcon.removeClass("fa-moon").addClass("fa-sun");
-        $(".phone-mockup.mockup-1 img").attr("src", "images/screenshots/light_1.jpg");
-        $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/light_2.jpg");
-        $(".phone-mockup.mockup-3 img").attr("src", "images/screenshots/light_3.jpg");
+        $(".phone-mockup.mockup-1 img").attr("src", imgPrefix + "images/screenshots/light_1.jpg");
+        $(".phone-mockup.mockup-2 img").attr("src", imgPrefix + "images/screenshots/light_2.jpg");
+        $(".phone-mockup.mockup-3 img").attr("src", imgPrefix + "images/screenshots/light_3.jpg");
       } else {
         $("html, body").removeClass("light-mode");
         themeIcon.removeClass("fa-sun").addClass("fa-moon");
-        $(".phone-mockup.mockup-1 img").attr("src", "images/screenshots/night_1.jpg");
-        $(".phone-mockup.mockup-2 img").attr("src", "images/screenshots/night_2.jpg");
-        $(".phone-mockup.mockup-3 img").attr("src", "images/screenshots/night_3.jpg");
+        $(".phone-mockup.mockup-1 img").attr("src", imgPrefix + "images/screenshots/night_1.jpg");
+        $(".phone-mockup.mockup-2 img").attr("src", imgPrefix + "images/screenshots/night_2.jpg");
+        $(".phone-mockup.mockup-3 img").attr("src", imgPrefix + "images/screenshots/night_3.jpg");
       }
       if (typeof window.updateActiveThemeColor === "function") {
         window.updateActiveThemeColor();
