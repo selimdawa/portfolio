@@ -660,7 +660,7 @@
           </div>
 
           <!-- Portfolio Filter Menu -->
-          <ul class="utf-portfolio-filter-menu nav mb-4">
+          <ul class="utf-portfolio-filter-menu nav mb-4 justify-content-center">
             <li class="nav-item"> <a data-filter="*" class="nav-link active" href="#">All</a></li>
             <li class="nav-item"> <a data-filter=".android" href="#" class="nav-link">Android</a></li>
             <li class="nav-item"> <a data-filter=".kotlin" href="#" class="nav-link">Kotlin</a></li>
@@ -1083,6 +1083,251 @@
         </div>
       </section>
       <!-- Portfolio end -->
+
+      <!-- Kotlin Libraries Section -->
+      <section id="kotlin-libraries" class="kotlin-libraries-section section pt-0">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="text-left mb-4">
+            <h2 class="section-title text-white font-weight-800">
+              Kotlin <span class="accent-text">Libraries</span>
+            </h2>
+          </div>
+
+          <!-- Filter Buttons -->
+          <ul class="kotlin-lib-filter-menu nav mb-4 justify-content-center">
+            <li class="nav-item"> <a data-lib-key="lib-1" class="nav-link active" href="#">Multi Colors</a></li>
+            <li class="nav-item"> <a data-lib-key="lib-2" class="nav-link" href="#">Multi Wave</a></li>
+            <li class="nav-item"> <a data-lib-key="lib-3" class="nav-link" href="#">Auto Image Slider</a></li>
+            <li class="nav-item"> <a data-lib-key="lib-4" class="nav-link" href="#">Bubble Bottom</a></li>
+            <li class="nav-item"> <a data-lib-key="lib-5" class="nav-link" href="#">Material Ripple Effect</a></li>
+          </ul>
+
+          <!-- Single Card Template Container -->
+          <div class="row justify-content-center kotlin-lib-grid">
+            <div class="col-12 kotlin-lib-card-wrapper" id="kotlin-lib-card">
+              <div class="row align-items-stretch">
+                <!-- Left Info Column -->
+                <div class="col-md-7 mb-4 mb-md-0 text-left d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div class="mb-3 text-left">
+                      <span id="lib-badge" class="badge">Multi Colors Library</span>
+                    </div>
+                    <p id="lib-desc" class="project-description text-muted mb-3">
+                      A professional, reactive theme management library for Android with support for colors, gradients, and automatic persistence using Jetpack DataStore.
+                    </p>
+                    <div class="lib-installation-title">📦 Installation</div>
+                    <div class="lib-section-label">Gradle - Add the dependency:</div>
+                    <div class="code-box-wrapper position-relative mb-3">
+                      <button class="btn btn-sm copy-code-btn position-absolute" type="button" title="Copy Code">
+                        <i class="fas fa-copy mr-1"></i> Copy
+                      </button>
+                      <pre id="lib-gradle-code" class="m-0" style="white-space: pre-wrap; font-family: monospace; font-size: 13.5px; padding-right: 65px;">dependencies {
+    implementation("io.github.selimdawa:<span class="accent-text">multi-colors</span>:<span class="accent-text">latest-version</span>")
+}</pre>
+                    </div>
+
+                    <div class="lib-section-label">Or using Version Catalog:</div>
+                    <div class="code-box-wrapper position-relative mb-3">
+                      <button class="btn btn-sm copy-code-btn position-absolute" type="button" title="Copy Code">
+                        <i class="fas fa-copy mr-1"></i> Copy
+                      </button>
+                      <pre id="lib-catalog-code" class="m-0" style="white-space: pre-wrap; font-family: monospace; font-size: 13.5px; padding-right: 65px;">[versions]
+<span style="font-weight: 700;">multiColors</span> = "<span class="accent-text">latest-version</span>"
+
+[libraries]
+<span class="accent-text">multi-colors</span> = { module = "io.github.selimdawa:<span class="accent-text">multi-colors</span>", version.ref = "<span style="font-weight: 700;">multiColors</span>" }</pre>
+                    </div>
+                  </div>
+                  <div class="card-footer-row d-flex align-items-center justify-content-start pt-3 mt-auto">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a id="lib-play-link" href="https://github.com/selimdawa/MultiColors/releases/download/1.1.0/Multi.Colors.apk" target="_blank" class="avatar-circle-link" title="Download APK">
+                        <img src="../images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a id="lib-github-link" href="https://github.com/selimdawa/MultiColors" target="_blank" class="avatar-circle-link ml-2" title="GitHub Repo">
+                        <img src="../images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                      <a id="lib-detail-link" href="https://github.com/selimdawa/MultiColors" target="_blank" class="project-arrow-btn ml-2" style="width: 32px; height: 32px; font-size: 12px;" title="View Details">
+                        <i class="fas fa-arrow-right" style="font-size: 12px;"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Right Phone Mockup Column -->
+                <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center lib-phones-wrapper">
+                  <div class="phone-mockup lib-phone-item mr-3">
+                    <img id="lib-img-1" src="https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/4.jpg" alt="Preview 1" />
+                  </div>
+                  <div class="phone-mockup lib-phone-item">
+                    <img id="lib-img-2" src="https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/3.gif" alt="Preview 2" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        (function() {
+          var kotlinLibrariesData = {
+            'lib-1': {
+              badge: 'Multi Colors Library',
+              description: 'A professional, reactive theme management library for Android with support for colors, gradients, and automatic persistence using Jetpack DataStore.',
+              gradleCode: 'dependencies {\n    implementation("io.github.selimdawa:<span class="accent-text">multi-colors</span>:<span class="accent-text">latest-version</span>")\n}',
+              catalogCode: '[versions]\n<span style="font-weight: 700;">multiColors</span> = "<span class="accent-text">latest-version</span>"\n\n[libraries]\n<span class="accent-text">multi-colors</span> = { module = "io.github.selimdawa:<span class="accent-text">multi-colors</span>", version.ref = "<span style="font-weight: 700;">multiColors</span>" }',
+              playUrl: 'https://github.com/selimdawa/MultiColors/releases/download/1.1.0/Multi.Colors.apk',
+              githubUrl: 'https://github.com/selimdawa/MultiColors',
+              lightImage1: 'https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/1.jpg',
+              darkImage1: 'https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/4.jpg',
+              lightImage2: 'https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/2.jpg',
+              darkImage2: 'https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/3.gif'
+            },
+            'lib-2': {
+              badge: 'Multi Wave Library',
+              description: 'An elegant wave animation library for Android Views and Jetpack Compose creating smooth liquid and wave background visual effects.',
+              gradleCode: 'dependencies {\n    implementation("io.github.selimdawa:<span class="accent-text">multi-wave</span>:<span class="accent-text">latest-version</span>")\n}',
+              catalogCode: '[versions]\n<span style="font-weight: 700;">multiWave</span> = "<span class="accent-text">latest-version</span>"\n\n[libraries]\n<span class="accent-text">multi-wave</span> = { module = "io.github.selimdawa:<span class="accent-text">multi-wave</span>", version.ref = "<span style="font-weight: 700;">multiWave</span>" }',
+              playUrl: 'https://github.com/selimdawa/MultiWave/releases/download/1.0.0/Multi.Wave.apk',
+              githubUrl: 'https://github.com/selimdawa/MultiWave',
+              lightImage1: 'https://raw.githubusercontent.com/selimdawa/MultiWave/main/UI/1.jpg',
+              darkImage1: 'https://raw.githubusercontent.com/selimdawa/MultiWave/main/UI/4.jpg',
+              lightImage2: 'https://raw.githubusercontent.com/selimdawa/MultiWave/main/UI/2.jpg',
+              darkImage2: 'https://raw.githubusercontent.com/selimdawa/MultiWave/main/UI/3.gif'
+            },
+            'lib-3': {
+              badge: 'Auto Image Slider Library',
+              description: 'A lightweight, highly customizable image slider and carousel library for Android with auto-scrolling, indicators, and page animations.',
+              gradleCode: 'dependencies {\n    implementation("io.github.selimdawa:<span class="accent-text">auto-image-slider</span>:<span class="accent-text">latest-version</span>")\n}',
+              catalogCode: '[versions]\n<span style="font-weight: 700;">autoImageSlider</span> = "<span class="accent-text">latest-version</span>"\n\n[libraries]\n<span class="accent-text">auto-image-slider</span> = { module = "io.github.selimdawa:<span class="accent-text">auto-image-slider</span>", version.ref = "<span style="font-weight: 700;">autoImageSlider</span>" }',
+              playUrl: 'https://github.com/selimdawa/AutoImageSlider/releases/download/1.0.1/Auto.Image.Slider.apk',
+              githubUrl: 'https://github.com/selimdawa/AutoImageSlider',
+              lightImage1: 'https://raw.githubusercontent.com/selimdawa/AutoImageSlider/main/UI/1.jpg',
+              darkImage1: 'https://raw.githubusercontent.com/selimdawa/AutoImageSlider/main/UI/4.jpg',
+              lightImage2: 'https://raw.githubusercontent.com/selimdawa/AutoImageSlider/main/UI/2.jpg',
+              darkImage2: 'https://raw.githubusercontent.com/selimdawa/AutoImageSlider/main/UI/3.gif'
+            },
+            'lib-4': {
+              badge: 'Bubble Bottom Library',
+              description: 'A playful and smooth bubble-style bottom navigation bar library with fluent transition animations for modern Android apps.',
+              gradleCode: 'dependencies {\n    implementation("io.github.selimdawa:<span class="accent-text">bubble-bottom</span>:<span class="accent-text">latest-version</span>")\n}',
+              catalogCode: '[versions]\n<span style="font-weight: 700;">bubbleBottom</span> = "<span class="accent-text">latest-version</span>"\n\n[libraries]\n<span class="accent-text">bubble-bottom</span> = { module = "io.github.selimdawa:<span class="accent-text">bubble-bottom</span>", version.ref = "<span style="font-weight: 700;">bubbleBottom</span>" }',
+              playUrl: 'https://github.com/selimdawa/BubbleBottom/releases/download/1.0.3/Bubble.Bottom.apk',
+              githubUrl: 'https://github.com/selimdawa/BubbleBottom',
+              lightImage1: 'https://raw.githubusercontent.com/selimdawa/BubbleBottom/main/UI/1.jpg',
+              darkImage1: 'https://raw.githubusercontent.com/selimdawa/BubbleBottom/main/UI/4.jpg',
+              lightImage2: 'https://raw.githubusercontent.com/selimdawa/BubbleBottom/main/UI/2.jpg',
+              darkImage2: 'https://raw.githubusercontent.com/selimdawa/BubbleBottom/main/UI/3.gif'
+            },
+            'lib-5': {
+              badge: 'Material Ripple Effect Library',
+              description: 'A customizable Material Design touch ripple feedback effect library for Jetpack Compose and custom View components.',
+              gradleCode: 'dependencies {\n    implementation("io.github.selimdawa:<span class="accent-text">material-ripple-effect</span>:<span class="accent-text">latest-version</span>")\n}',
+              catalogCode: '[versions]\n<span style="font-weight: 700;">materialRippleEffect</span> = "<span class="accent-text">latest-version</span>"\n\n[libraries]\n<span class="accent-text">material-ripple-effect</span> = { module = "io.github.selimdawa:<span class="accent-text">material-ripple-effect</span>", version.ref = "<span style="font-weight: 700;">materialRippleEffect</span>" }',
+              playUrl: 'https://github.com/selimdawa/MaterialRippleEffect/releases/download/1.0.2/Material.Ripple.Effect.apk',
+              githubUrl: 'https://github.com/selimdawa/MaterialRippleEffect',
+              lightImage1: 'https://raw.githubusercontent.com/selimdawa/MaterialRippleEffect/main/UI/1.jpg',
+              darkImage1: 'https://raw.githubusercontent.com/selimdawa/MaterialRippleEffect/main/UI/4.jpg',
+              lightImage2: 'https://raw.githubusercontent.com/selimdawa/MaterialRippleEffect/main/UI/2.jpg',
+              darkImage2: 'https://raw.githubusercontent.com/selimdawa/MaterialRippleEffect/main/UI/3.gif'
+            }
+          };
+
+          var currentLibKey = 'lib-1';
+
+          function updateLibImages() {
+            var data = kotlinLibrariesData[currentLibKey];
+            if (data) {
+              var isLight = jQuery('body').hasClass('light-mode');
+              jQuery('#lib-img-1').attr('src', isLight ? data.lightImage1 : data.darkImage1);
+              jQuery('#lib-img-2').attr('src', isLight ? data.lightImage2 : data.darkImage2);
+            }
+          }
+
+          jQuery(document).on('click', '#theme-toggle-btn', function() {
+            setTimeout(updateLibImages, 150);
+          });
+          };
+
+          function initCopyButtons() {
+            jQuery(document).off('click', '.copy-code-btn').on('click', '.copy-code-btn', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              var $btn = jQuery(this);
+              var codeText = $btn.siblings('pre').text();
+
+              function showSuccess() {
+                $btn.html('<i class="fas fa-check mr-1" style="color: #28a745;"></i> Copied');
+                $btn.css({'background': 'rgba(40, 167, 69, 0.25)', 'border-color': 'rgba(40, 167, 69, 0.5)', 'color': '#28a745'});
+                setTimeout(function() {
+                  $btn.html('<i class="fas fa-copy mr-1"></i> Copy');
+                  $btn.css({'background': 'rgba(255,255,255,0.12)', 'border-color': 'rgba(255,255,255,0.2)', 'color': '#fff'});
+                }, 2000);
+              }
+
+              var textarea = document.createElement("textarea");
+              textarea.value = codeText;
+              textarea.style.position = "fixed";
+              textarea.style.opacity = "0";
+              document.body.appendChild(textarea);
+              textarea.focus();
+              textarea.select();
+              try {
+                var successful = document.execCommand('copy');
+                if (successful) {
+                  showSuccess();
+                } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                  navigator.clipboard.writeText(codeText).then(function() {
+                    showSuccess();
+                  });
+                }
+              } catch (err) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                  navigator.clipboard.writeText(codeText).then(function() {
+                    showSuccess();
+                  });
+                }
+              }
+              document.body.removeChild(textarea);
+            });
+          }
+
+          function initKotlinLibFilter() {
+            initCopyButtons();
+            var $links = jQuery('.kotlin-lib-filter-menu .nav-link');
+            $links.off('click').on('click', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              $links.removeClass('active');
+              jQuery(this).addClass('active');
+              var libKey = jQuery(this).attr('data-lib-key');
+              var data = kotlinLibrariesData[libKey];
+              if (data) {
+                var $card = jQuery('#kotlin-lib-card');
+                $card.fadeOut(150, function() {
+                  jQuery('#lib-badge').text(data.badge).css({'background-color': 'var(--primary-color)', 'color': '#ffffff'});
+                  jQuery('#lib-desc').text(data.description);
+                  jQuery('#lib-gradle-code').html(data.gradleCode);
+                  jQuery('#lib-catalog-code').html(data.catalogCode);
+                  jQuery('#lib-play-link').attr('href', data.playUrl);
+                  jQuery('#lib-github-link').attr('href', data.githubUrl);
+                  jQuery('#lib-detail-link').attr('href', data.githubUrl);
+                  jQuery('#lib-img-1').attr('src', data.image1);
+                  jQuery('#lib-img-2').attr('src', data.image2);
+                  $card.fadeIn(150);
+                });
+              }
+              return false;
+            });
+          }
+          if (typeof jQuery !== 'undefined') {
+            jQuery(document).ready(initKotlinLibFilter);
+            jQuery(window).on('load', initKotlinLibFilter);
+          } else {
+            document.addEventListener('DOMContentLoaded', initKotlinLibFilter);
+          }
+        })();
+      </script>
 
       <!-- Contact Me Section -->
       <section id="contact" class="contact-section section">

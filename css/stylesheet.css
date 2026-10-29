@@ -4175,8 +4175,8 @@ body.light-mode #submit-btn:hover * {
   align-items: center;
   gap: 8px;
   padding: 7px 16px;
-  background: var(--card-bg-dark);
-  border: 1px solid var(--border-dark-subtle);
+  background: var(--border-dark-subtle) !important;
+  border: 1px solid var(--border-dark) !important;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 500;
@@ -4394,9 +4394,10 @@ body.light-mode .btn-hero-secondary:hover {
 }
 
 body.light-mode .tech-badge {
-  background: var(--alpha-white-90);
-  border-color: var(--alpha-black-15);
-  color: var(--text-light-main);
+  background: #ffffff !important;
+  border: 1px solid var(--border-light-subtle) !important;
+  color: var(--text-light-main) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03) !important;
 }
 
 body.light-mode .tech-badge i,
@@ -4649,8 +4650,8 @@ body.light-mode .text-white {
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background: var(--alpha-black-90);
-  border: 1px solid var(--border-dark);
+  background: var(--border-dark-subtle) !important;
+  border: 1px solid var(--border-dark) !important;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 500;
@@ -4805,9 +4806,10 @@ body.light-mode .about-info-list .info-label {
 }
 
 body.light-mode .about-badge {
-  background: var(--border-light-subtle) !important;
-  border: 1px solid var(--border-light) !important;
-  color: var(--text-light-sub) !important;
+  background: #ffffff !important;
+  border: 1px solid var(--border-light-subtle) !important;
+  color: var(--text-light-main) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03) !important;
 }
 
 body.light-mode .about-image-card .image-inner {
@@ -5039,8 +5041,8 @@ body.light-mode .tech-inline-tag {
 }
 
 body.light-mode .resume-column-title .icon-circle {
-  background: var(--border-light-subtle) !important;
-  border: 1px solid var(--border-light) !important;
+  background: #ffffff !important;
+  border: 1px solid var(--border-light-subtle) !important;
   color: var(--primary-color) !important;
 }
 
@@ -5098,9 +5100,11 @@ body.light-mode .progress-custom {
 
 /* Portfolio Filter Menu Pills */
 .utf-portfolio-filter-menu,
-.utf-portfolio-filter-menu.nav-tabs {
+.utf-portfolio-filter-menu.nav-tabs,
+.kotlin-lib-filter-menu {
   border-bottom: none !important;
   gap: 10px;
+  justify-content: center !important;
 }
 
 .utf-portfolio-filter-menu .nav-item .nav-link:after,
@@ -5108,7 +5112,13 @@ body.light-mode .progress-custom {
 .utf-portfolio-filter-menu .nav-item .nav-link.active:after,
 .utf-portfolio-filter-menu .nav-item .nav-link:hover:after,
 .utf-portfolio-filter-menu .nav-link::after,
-.utf-portfolio-filter-menu .nav-link::before {
+.utf-portfolio-filter-menu .nav-link::before,
+.kotlin-lib-filter-menu .nav-item .nav-link:after,
+.kotlin-lib-filter-menu .nav-item .nav-link:before,
+.kotlin-lib-filter-menu .nav-item .nav-link.active:after,
+.kotlin-lib-filter-menu .nav-item .nav-link:hover:after,
+.kotlin-lib-filter-menu .nav-link::after,
+.kotlin-lib-filter-menu .nav-link::before {
   display: none !important;
   content: none !important;
   height: 0 !important;
@@ -5116,7 +5126,8 @@ body.light-mode .progress-custom {
   border: none !important;
 }
 
-.utf-portfolio-filter-menu .nav-link {
+.utf-portfolio-filter-menu .nav-link,
+.kotlin-lib-filter-menu .nav-link {
   background: var(--card-bg-dark) !important;
   border: 1px solid var(--border-dark) !important;
   color: var(--text-dark-sub) !important;
@@ -5131,7 +5142,9 @@ body.light-mode .progress-custom {
 }
 
 .utf-portfolio-filter-menu .nav-link:hover,
-.utf-portfolio-filter-menu .nav-link.active {
+.utf-portfolio-filter-menu .nav-link.active,
+.kotlin-lib-filter-menu .nav-link:hover,
+.kotlin-lib-filter-menu .nav-link.active {
   background: var(--card-bg-dark) !important;
   border: 1px solid var(--primary-color) !important;
   color: var(--color-white) !important;
@@ -5307,7 +5320,8 @@ body.light-mode .avatar-circle-link {
   border-color: var(--border-light);
 }
 
-body.light-mode .utf-portfolio-filter-menu .nav-link {
+body.light-mode .utf-portfolio-filter-menu .nav-link,
+body.light-mode .kotlin-lib-filter-menu .nav-link {
   background: var(--alpha-black-04) !important;
   border-color: var(--alpha-black-10) !important;
   color: var(--text-light-sub) !important;
@@ -5315,7 +5329,9 @@ body.light-mode .utf-portfolio-filter-menu .nav-link {
 }
 
 body.light-mode .utf-portfolio-filter-menu .nav-link.active,
-body.light-mode .utf-portfolio-filter-menu .nav-link:hover {
+body.light-mode .utf-portfolio-filter-menu .nav-link:hover,
+body.light-mode .kotlin-lib-filter-menu .nav-link.active,
+body.light-mode .kotlin-lib-filter-menu .nav-link:hover {
   background: var(--alpha-black-04) !important;
   border: 1px solid var(--primary-color) !important;
   color: var(--text-light-main) !important;
@@ -5687,4 +5703,198 @@ html[dir="rtl"] input::placeholder,
 html[dir="rtl"] textarea::placeholder {
   text-align: right !important;
   direction: rtl !important;
+}
+
+/* Kotlin Libraries Section Badge */
+#lib-badge,
+.kotlin-libraries-section #lib-badge,
+.kotlin-libraries-section .badge {
+  color: #ffffff !important;
+  background-color: var(--primary-color) !important;
+  display: inline-block !important;
+  text-align: left !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  padding: 10px 24px !important;
+  border-radius: 10px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body.light-mode #lib-badge,
+body.light-mode .kotlin-libraries-section .badge {
+  color: #ffffff !important;
+  background-color: var(--primary-color) !important;
+}
+
+.kotlin-libraries-section .accent-text {
+  color: var(--primary-color) !important;
+  font-weight: 700 !important;
+}
+
+.kotlin-libraries-section .kotlin-subheading {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.kotlin-libraries-section .kotlin-subheading .theme-bar {
+  width: 24px;
+  height: 3px;
+  background: var(--primary-color);
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.kotlin-libraries-section .kotlin-subheading .subheading-text {
+  color: var(--primary-color);
+}
+
+#kotlin-lib-card > .row {
+  display: flex;
+  align-items: flex-start;
+}
+
+#kotlin-lib-card > .row > .col-md-7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 360px;
+}
+
+#kotlin-lib-card > .row > .col-md-5 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.kotlin-libraries-section .card-footer-row {
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
+.kotlin-libraries-section .lib-installation-title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.kotlin-libraries-section .lib-section-label {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+body.light-mode .kotlin-libraries-section .lib-installation-title,
+body.light-mode .kotlin-libraries-section .lib-section-label {
+  color: #0f172a !important;
+}
+
+body.light-mode .kotlin-libraries-section .lib-section-label {
+  color: #0f172a !important;
+}
+
+body.light-mode .kotlin-libraries-section .card-footer-row {
+  border-top: none !important;
+}
+
+.code-box-wrapper {
+  background: #212124;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px !important;
+  padding: 14px 18px !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.code-box-wrapper pre {
+  color: #f8fafc !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+}
+
+.code-box-wrapper .copy-code-btn {
+  top: 10px !important;
+  right: 10px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease;
+}
+
+.code-box-wrapper .copy-code-btn:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-1px);
+}
+
+body.light-mode .code-box-wrapper {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .code-box-wrapper pre {
+  color: #0f172a !important;
+}
+
+body.light-mode .code-box-wrapper .copy-code-btn {
+  background: rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  color: #0f172a !important;
+}
+
+body.light-mode .code-box-wrapper .copy-code-btn:hover {
+  background: rgba(0, 0, 0, 0.12) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.lib-phones-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.lib-phones-wrapper .lib-phone-item {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  width: 200px !important;
+  height: 430px !important;
+  transform: none !important;
+  animation: none !important;
+  border-radius: 26px !important;
+  border: 3px solid #1e1e24 !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+  background: #000000 !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.lib-phones-wrapper .lib-phone-item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55) !important;
+}
+
+.lib-phones-wrapper .lib-phone-item img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  background: #000000 !important;
+  border-radius: 22px !important;
+  display: block !important;
+}
+
+body.light-mode .lib-phone-item {
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
 }

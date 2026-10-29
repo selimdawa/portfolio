@@ -1,0 +1,239 @@
+// ==========================================================================
+// SCSS Kotlin Libraries Section Component
+// ==========================================================================
+@import 'variables';
+@import 'mixins';
+
+.kotlin-libraries-section {
+  padding: 90px 0;
+
+  .accent-text {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+  }
+
+  .card-footer-row {
+    border-top: none !important;
+    padding-top: 0 !important;
+  }
+
+  .lib-installation-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .lib-section-label {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  #lib-badge,
+  .badge {
+    color: #ffffff !important;
+    background-color: var(--primary-color) !important;
+    display: inline-block !important;
+    text-align: left !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    padding: 10px 24px !important;
+    border-radius: 10px !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .kotlin-subheading,
+  .lib-subheading {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+
+    .theme-bar {
+      width: 24px;
+      height: 3px;
+      background: var(--primary-color);
+      display: inline-block;
+      border-radius: 2px;
+    }
+
+    .subheading-text {
+      color: var(--primary-color);
+    }
+  }
+
+  .kotlin-lib-filter-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+
+    .nav-link {
+      background: $alpha-black-90 !important;
+      border: 1px solid $alpha-white-10 !important;
+      color: $color-slate-400 !important;
+      border-radius: 20px !important;
+      padding: 8px 20px !important;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &:hover,
+      &.active {
+        background: $alpha-black-90 !important;
+        border: 1px solid var(--primary-color) !important;
+        color: $color-white !important;
+        box-shadow: 0 0 16px var(--primary-glow) !important;
+      }
+    }
+  }
+
+  .kotlin-lib-card-wrapper {
+    background: transparent;
+
+    > .row {
+      display: flex;
+      align-items: flex-start;
+
+      > .col-md-7 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 360px;
+      }
+
+      > .col-md-5 {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+body.light-mode .kotlin-libraries-section {
+  .lib-installation-title,
+  .lib-section-label {
+    color: #0f172a !important;
+  }
+
+  .card-footer-row {
+    border-top: none !important;
+  }
+
+  .kotlin-lib-filter-menu .nav-link {
+    background: $alpha-black-04 !important;
+    border-color: $alpha-black-10 !important;
+    color: $color-slate-700 !important;
+
+    &:hover,
+    &.active {
+      background: $alpha-black-04 !important;
+      border: 1px solid var(--primary-color) !important;
+      color: $color-slate-900 !important;
+      box-shadow: 0 0 14px var(--primary-glow) !important;
+    }
+  }
+}
+
+.code-box-wrapper {
+  background: #212124;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px !important;
+  padding: 14px 18px !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+
+  pre {
+    color: #f8fafc !important;
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+  }
+
+  .copy-code-btn {
+    top: 10px !important;
+    right: 10px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 4px 12px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.16) !important;
+      border-color: rgba(255, 255, 255, 0.3) !important;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+body.light-mode .code-box-wrapper {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+  pre {
+    color: #0f172a !important;
+  }
+
+  .copy-code-btn {
+    background: rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    color: #0f172a !important;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.12) !important;
+      border-color: rgba(0, 0, 0, 0.25) !important;
+    }
+  }
+}
+
+.lib-phones-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+
+  .lib-phone-item {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 200px !important;
+    height: 430px !important;
+    transform: none !important;
+    animation: none !important;
+    border-radius: 26px !important;
+    border: 3px solid #1e1e24 !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+    background: #000000 !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+
+    &:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55) !important;
+    }
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: fill !important;
+      background: #000000 !important;
+      border-radius: 22px !important;
+      display: block !important;
+    }
+  }
+}
+
+body.light-mode .lib-phone-item {
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+}
