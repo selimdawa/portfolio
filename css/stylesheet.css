@@ -4712,7 +4712,6 @@ body.light-mode .text-white {
   background: var(--card-bg-dark) !important;
   border: 1px solid var(--border-dark) !important;
   border-radius: 20px;
-  backdrop-filter: blur(8px);
   padding: 22px 20px;
 }
 
@@ -4900,7 +4899,6 @@ body.light-mode .about-info-list .info-value a {
   background: var(--card-bg-dark) !important;
   border: 1px solid var(--border-dark) !important;
   border-radius: 16px;
-  backdrop-filter: blur(8px);
 }
 
 .company-name {
@@ -4988,7 +4986,6 @@ body.light-mode .accent-link:hover {
   background: var(--card-bg-dark) !important;
   border: 1px solid var(--border-dark) !important;
   border-radius: 16px;
-  backdrop-filter: blur(8px);
 }
 
 .progress-custom {
@@ -5157,7 +5154,6 @@ body.light-mode .progress-custom {
   background: var(--card-bg-dark) !important;
   border: 1px solid var(--border-dark) !important;
   border-radius: 20px;
-  backdrop-filter: blur(8px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -5285,6 +5281,9 @@ body.light-mode .contact-form-card {
 .contact-form-card,
 .skill-card {
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .resume-card:hover,
@@ -5400,7 +5399,6 @@ body.light-mode .project-arrow-btn:hover i {
   background: var(--card-bg-dark) !important;
   border: 1px solid var(--border-dark) !important;
   border-radius: 20px;
-  backdrop-filter: blur(8px);
   height: 100%;
 }
 
