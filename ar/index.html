@@ -245,13 +245,13 @@
             <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center justify-content-center position-relative">
               <div class="hero-mockups-wrapper d-flex justify-content-center align-items-center">
                 <div class="phone-mockup mockup-1">
-                  <img src="../images/screenshots/night_1.jpg" alt="تطبيق أندرويد 1" />
+                  <img src="../images/hero/night_1.jpg" alt="تطبيق أندرويد 1" />
                 </div>
                 <div class="phone-mockup mockup-2">
-                  <img src="../images/screenshots/night_2.jpg" alt="تطبيق أندرويد 2" />
+                  <img src="../images/hero/night_2.jpg" alt="تطبيق أندرويد 2" />
                 </div>
                 <div class="phone-mockup mockup-3">
-                  <img src="../images/screenshots/night_3.jpg" alt="تطبيق أندرويد 3" />
+                  <img src="../images/hero/night_3.jpg" alt="تطبيق أندرويد 3" />
                 </div>
               </div>
 
@@ -1062,6 +1062,90 @@
       </section>
       <!-- Portfolio end -->
 
+      <!-- Kotlin Libraries Section -->
+      <section id="kotlin-libraries" class="kotlin-libraries-section section pt-0">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="text-right mb-4">
+            <h2 class="section-title text-white font-weight-800">
+              مكتبات <span class="accent-text">الكوتلن</span>
+            </h2>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="kotlin-lib-filter-menu nav mb-4 justify-content-center">
+            <button type="button" data-lib-key="lib-1" class="nav-link active">Multi Colors</button>
+            <button type="button" data-lib-key="lib-2" class="nav-link">Multi Wave</button>
+            <button type="button" data-lib-key="lib-3" class="nav-link">Auto Image Slider</button>
+            <button type="button" data-lib-key="lib-4" class="nav-link">Bubble Bottom</button>
+            <button type="button" data-lib-key="lib-5" class="nav-link">Material Ripple Effect</button>
+          </div>
+
+          <!-- Single Card Template Container -->
+          <div class="row justify-content-center kotlin-lib-grid">
+            <div class="col-12 kotlin-lib-card-wrapper" id="kotlin-lib-card">
+              <div class="row align-items-stretch">
+                <!-- Right Info Column (Left in RTL) -->
+                <div class="col-md-7 mb-4 mb-md-0 text-right d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div class="mb-3 text-right">
+                      <span id="lib-badge" class="badge">Multi Colors Library</span>
+                    </div>
+                    <p id="lib-desc" class="project-description text-muted mb-3">
+                      مكتبة احترافية لإدارة الثيمات في أندرويد مع دعم الألوان والتدرجات والحفظ التلقائي باستخدام Jetpack DataStore.
+                    </p>
+                    <div class="lib-installation-title">📦 التثبيت</div>
+                    <div class="lib-section-label">Gradle - أضف الاعتمادية:</div>
+                    <div class="code-box-wrapper position-relative mb-3" dir="ltr">
+                      <button class="btn btn-sm copy-code-btn position-absolute" type="button" title="نسخ الكود">
+                        <i class="fas fa-copy ml-1"></i> نسخ
+                      </button>
+                      <pre id="lib-gradle-code" class="m-0 text-left" style="white-space: pre-wrap; font-family: monospace; font-size: 13.5px; padding-right: 65px;">dependencies {
+    implementation("io.github.selimdawa:<span class="accent-text">multi-colors</span>:<span class="accent-text">latest-version</span>")
+}</pre>
+                    </div>
+
+                    <div class="lib-section-label">أو باستخدام Version Catalog:</div>
+                    <div class="code-box-wrapper position-relative mb-3" dir="ltr">
+                      <button class="btn btn-sm copy-code-btn position-absolute" type="button" title="نسخ الكود">
+                        <i class="fas fa-copy ml-1"></i> نسخ
+                      </button>
+                      <pre id="lib-catalog-code" class="m-0 text-left" style="white-space: pre-wrap; font-family: monospace; font-size: 13.5px; padding-right: 65px;">[versions]
+<span style="font-weight: 700;">multiColors</span> = "<span class="accent-text">latest-version</span>"
+
+[libraries]
+<span class="accent-text">multi-colors</span> = { module = "io.github.selimdawa:<span class="accent-text">multi-colors</span>", version.ref = "<span style="font-weight: 700;">multiColors</span>" }</pre>
+                    </div>
+                  </div>
+                  <div class="card-footer-row d-flex align-items-center justify-content-start pt-3 mt-auto">
+                    <div class="avatar-links-group d-flex align-items-center">
+                      <a id="lib-play-link" href="https://github.com/selimdawa/MultiColors/releases/download/1.1.0/Multi.Colors.apk" target="_blank" class="avatar-circle-link" title="تحميل APK">
+                        <img src="../images/google-play.png" alt="Google Play" />
+                      </a>
+                      <a id="lib-github-link" href="https://github.com/selimdawa/MultiColors" target="_blank" class="avatar-circle-link mr-2" title="مستودع جيت هاب">
+                        <img src="../images/kotlin.png" alt="Kotlin Repo" />
+                      </a>
+                      <a id="lib-detail-link" href="https://github.com/selimdawa/MultiColors" target="_blank" class="project-arrow-btn mr-2" style="width: 32px; height: 32px; font-size: 12px;" title="عرض التفاصيل">
+                        <i class="fas fa-arrow-left" style="font-size: 12px;"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Left Phone Mockup Column (Right in RTL) -->
+                <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center lib-phones-wrapper">
+                  <div class="phone-mockup lib-phone-item">
+                    <img id="lib-img-1" src="../images/Multi Colors/night_1.jpg" alt="معاينة 1" />
+                  </div>
+                  <div class="phone-mockup lib-phone-item">
+                    <img id="lib-img-2" src="../images/Multi Colors/night_2.jpg" alt="معاينة 2" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Contact Me Section -->
       <section id="contact" class="contact-section section">
         <div class="container">
@@ -1213,6 +1297,210 @@
   <script src="../plugins/owl.carousel/owl.carousel.min.js"></script>
   <script src="../plugins/isotope/isotope.pkgd.min.js"></script>
   <script src="../plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script>
+    (function() {
+      var kotlinLibrariesData = {
+        'lib-1': {
+          badge: 'Multi Colors Library',
+          description: 'مكتبة احترافية لإدارة الثيمات في أندرويد مع دعم الألوان والتدرجات والحفظ التلقائي باستخدام Jetpack DataStore.',
+          gradleCode: 'dependencies {\n    implementation("io.github.selimdawa:<span class="accent-text">multi-colors</span>:<span class="accent-text">latest-version</span>")\n}',
+          catalogCode: '[versions]\n<span style="font-weight: 700;">multiColors</span> = "<span class="accent-text">latest-version</span>"\n\n[libraries]\n<span class="accent-text">multi-colors</span> = { module = "io.github.selimdawa:<span class="accent-text">multi-colors</span>", version.ref = "<span style="font-weight: 700;">multiColors</span>" }',
+          playUrl: 'https://github.com/selimdawa/MultiColors/releases/download/1.1.0/Multi.Colors.apk',
+          githubUrl: 'https://github.com/selimdawa/MultiColors',
+          lightImage1: '../images/Multi Colors/light_1.jpg',
+          darkImage1: '../images/Multi Colors/night_1.jpg',
+          lightImage2: '../images/Multi Colors/light_2.jpg',
+          darkImage2: '../images/Multi Colors/night_2.jpg'
+        },
+        'lib-2': {
+          badge: 'Multi Wave Library',
+          description: 'مكتبة رسوم متحركة موجية أنيقة وخفيفة الوزن لتطبيقات أندرويد لإضافة تأثيرات موجية تفاعلية.',
+          gradleCode: 'dependencies {\n    implementation("io.github.selimdawa:<span class="accent-text">multi-wave</span>:<span class="accent-text">latest-version</span>")\n}',
+          catalogCode: '[versions]\n<span style="font-weight: 700;">multiWave</span> = "<span class="accent-text">latest-version</span>"\n\n[libraries]\n<span class="accent-text">multi-wave</span> = { module = "io.github.selimdawa:<span class="accent-text">multi-wave</span>", version.ref = "<span style="font-weight: 700;">multiWave</span>" }',
+          playUrl: 'https://github.com/selimdawa/MultiWave/releases/download/1.0.1/Multi.Wave.apk',
+          githubUrl: 'https://github.com/selimdawa/MultiWave',
+          lightImage1: '../images/Multi Wave/light_1.jpg',
+          darkImage1: '../images/Multi Wave/night_1.jpg',
+          lightImage2: '../images/Multi Wave/light_2.jpg',
+          darkImage2: '../images/Multi Wave/night_2.jpg'
+        },
+        'lib-3': {
+          badge: 'Auto Image Slider Library',
+          description: 'مكتبة عارض صور وتمرير تلقائي خفيفة وقابلة للتخصيص بشكل كبير لأندرويد مع التمرير التلقائي والمؤشرات وحركات الانتقال بين الصفحات.',
+          gradleCode: 'dependencies {\n    implementation("io.github.selimdawa:<span class="accent-text">auto-image-slider</span>:<span class="accent-text">latest-version</span>")\n}',
+          catalogCode: '[versions]\n<span style="font-weight: 700;">autoImageSlider</span> = "<span class="accent-text">latest-version</span>"\n\n[libraries]\n<span class="accent-text">auto-image-slider</span> = { module = "io.github.selimdawa:<span class="accent-text">auto-image-slider</span>", version.ref = "<span style="font-weight: 700;">autoImageSlider</span>" }',
+          playUrl: 'https://github.com/selimdawa/AutoImageSlider/releases/download/1.0.1/Auto.Image.Slider.apk',
+          githubUrl: 'https://github.com/selimdawa/AutoImageSlider',
+          lightImage1: '../images/Auto Image Slider/light_1.jpg',
+          darkImage1: '../images/Auto Image Slider/night_1.jpg',
+          lightImage2: '../images/Auto Image Slider/light_2.jpg',
+          darkImage2: '../images/Auto Image Slider/night_2.jpg'
+        },
+        'lib-4': {
+          badge: 'Bubble Bottom Library',
+          description: 'مكتبة شريط التنقل السفلي بتصميم فقاعي سلس ومرح مع حركات انتقال مرنة لتطبيقات أندرويد الحديثة.',
+          gradleCode: 'dependencies {\n    implementation("io.github.selimdawa:<span class="accent-text">bubble-bottom</span>:<span class="accent-text">latest-version</span>")\n}',
+          catalogCode: '[versions]\n<span style="font-weight: 700;">bubbleBottom</span> = "<span class="accent-text">latest-version</span>"\n\n[libraries]\n<span class="accent-text">bubble-bottom</span> = { module = "io.github.selimdawa:<span class="accent-text">bubble-bottom</span>", version.ref = "<span style="font-weight: 700;">bubbleBottom</span>" }',
+          playUrl: 'https://github.com/selimdawa/BubbleBottom/releases/download/1.0.3/Bubble.Bottom.apk',
+          githubUrl: 'https://github.com/selimdawa/BubbleBottom',
+          lightImage1: '../images/Bubble Bottom/light_1.jpg',
+          darkImage1: '../images/Bubble Bottom/night_1.jpg',
+          lightImage2: '../images/Bubble Bottom/light_2.jpg',
+          darkImage2: '../images/Bubble Bottom/night_2.jpg'
+        },
+        'lib-5': {
+          badge: 'Material Ripple Effect Library',
+          description: 'مكتبة تأثير تفاعلي باللمس بتصميم Material Design مخصصة لجيت باك كومبوز والمكونات المخصصة.',
+          gradleCode: 'dependencies {\n    implementation("io.github.selimdawa:<span class="accent-text">material-ripple-effect</span>:<span class="accent-text">latest-version</span>")\n}',
+          catalogCode: '[versions]\n<span style="font-weight: 700;">materialRippleEffect</span> = "<span class="accent-text">latest-version</span>"\n\n[libraries]\n<span class="accent-text">material-ripple-effect</span> = { module = "io.github.selimdawa:<span class="accent-text">material-ripple-effect</span>", version.ref = "<span style="font-weight: 700;">materialRippleEffect</span>" }',
+          playUrl: 'https://github.com/selimdawa/MaterialRippleEffect/releases/download/1.0.2/Material.Ripple.Effect.apk',
+          githubUrl: 'https://github.com/selimdawa/MaterialRippleEffect',
+          lightImage1: '../images/Material Ripple Effect/light_1.jpg',
+          darkImage1: '../images/Material Ripple Effect/night_1.jpg',
+          lightImage2: '../images/Material Ripple Effect/light_2.jpg',
+          darkImage2: '../images/Material Ripple Effect/night_2.jpg'
+        }
+      };
+
+      var currentLibKey = 'lib-1';
+
+      function updateLibImages() {
+        var data = kotlinLibrariesData[currentLibKey];
+        if (!data) return;
+        var isLight = false;
+        if (typeof jQuery !== 'undefined') {
+          isLight = jQuery('body').hasClass('light-mode') || jQuery('html').hasClass('light-mode');
+        } else {
+          isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
+        }
+        var img1 = document.getElementById('lib-img-1');
+        if (img1) {
+          var target1 = isLight ? data.lightImage1 : data.darkImage1;
+          if (img1.getAttribute('src') !== target1) img1.src = target1;
+        }
+        var img2 = document.getElementById('lib-img-2');
+        if (img2) {
+          var target2 = isLight ? data.lightImage2 : data.darkImage2;
+          if (img2.getAttribute('src') !== target2) img2.src = target2;
+        }
+      }
+      window.updateLibImages = updateLibImages;
+
+      if (typeof MutationObserver !== 'undefined') {
+        var themeObserver = new MutationObserver(function() {
+          updateLibImages();
+        });
+        if (document.body) themeObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+        if (document.documentElement) themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+      }
+
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('#theme-toggle-btn, .theme-toggle')) {
+          setTimeout(updateLibImages, 20);
+          setTimeout(updateLibImages, 150);
+          setTimeout(updateLibImages, 350);
+        }
+      });
+
+      function initCopyButtons() {
+        if (typeof jQuery === 'undefined') return;
+        jQuery(document).off('click', '.copy-code-btn').on('click', '.copy-code-btn', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var $btn = jQuery(this);
+          var codeText = $btn.siblings('pre').text();
+
+          function showSuccess() {
+            $btn.html('<i class="fas fa-check ml-1" style="color: #28a745;"></i> تم النسخ');
+            $btn.css({'background': 'rgba(40, 167, 69, 0.25)', 'border-color': 'rgba(40, 167, 69, 0.5)', 'color': '#28a745'});
+            setTimeout(function() {
+              $btn.html('<i class="fas fa-copy ml-1"></i> نسخ');
+              $btn.css({'background': 'rgba(255,255,255,0.12)', 'border-color': 'rgba(255,255,255,0.2)', 'color': '#fff'});
+            }, 2000);
+          }
+
+          var textarea = document.createElement("textarea");
+          textarea.value = codeText;
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+          try {
+            var successful = document.execCommand('copy');
+            if (successful) {
+              showSuccess();
+            } else if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(codeText).then(function() {
+                showSuccess();
+              });
+            }
+          } catch (err) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(codeText).then(function() {
+                showSuccess();
+              });
+            }
+          }
+          document.body.removeChild(textarea);
+        });
+      }
+
+      document.addEventListener('click', function(e) {
+        var btn = e.target.closest('.kotlin-lib-filter-menu [data-lib-key]');
+        if (!btn) return;
+
+        if (e.preventDefault) e.preventDefault();
+        if (e.stopPropagation) e.stopPropagation();
+
+        var allBtns = document.querySelectorAll('.kotlin-lib-filter-menu [data-lib-key]');
+        for (var i = 0; i < allBtns.length; i++) {
+          allBtns[i].classList.remove('active');
+        }
+        btn.classList.add('active');
+
+        var libKey = btn.getAttribute('data-lib-key');
+        if (!libKey || !kotlinLibrariesData[libKey]) return;
+
+        currentLibKey = libKey;
+        var data = kotlinLibrariesData[libKey];
+
+        var badge = document.getElementById('lib-badge');
+        if (badge) badge.textContent = data.badge;
+
+        var desc = document.getElementById('lib-desc');
+        if (desc) desc.textContent = data.description;
+
+        var gradle = document.getElementById('lib-gradle-code');
+        if (gradle) gradle.innerHTML = data.gradleCode;
+
+        var catalog = document.getElementById('lib-catalog-code');
+        if (catalog) catalog.innerHTML = data.catalogCode;
+
+        var playLink = document.getElementById('lib-play-link');
+        if (playLink) playLink.setAttribute('href', data.playUrl);
+
+        var githubLink = document.getElementById('lib-github-link');
+        if (githubLink) githubLink.setAttribute('href', data.githubUrl);
+
+        var detailLink = document.getElementById('lib-detail-link');
+        if (detailLink) detailLink.setAttribute('href', data.githubUrl);
+
+        updateLibImages();
+      }, true);
+
+      function initKotlinLibFilter() {
+        initCopyButtons();
+        updateLibImages();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initKotlinLibFilter);
+      } else {
+        initKotlinLibFilter();
+      }
+    })();
+  </script>
   <script src="../js/custom-jquery.js"></script>
 </body>
 

@@ -4238,18 +4238,18 @@ body.light-mode #submit-btn:hover * {
 
 /* Punch-hole camera notch on top center */
 .phone-mockup::before {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-black);
-  box-shadow: 0 0 2px var(--alpha-white-20);
-  z-index: 10;
-  pointer-events: none;
+  content: '' !important;
+  position: absolute !important;
+  top: 7px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #000000 !important;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.15) !important;
+  z-index: 30 !important;
+  pointer-events: none !important;
 }
 
 .phone-mockup img {
@@ -5139,6 +5139,7 @@ body.light-mode .progress-custom {
   text-decoration: none !important;
   box-shadow: none !important;
   outline: none !important;
+  cursor: pointer !important;
 }
 
 .utf-portfolio-filter-menu .nav-link:hover,
