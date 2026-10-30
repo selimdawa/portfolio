@@ -202,6 +202,14 @@ body.light-mode .code-box-wrapper {
   justify-content: flex-end;
   gap: 22px;
 
+  @media (max-width: 991px) {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 30px !important;
+    width: 100% !important;
+  }
+
   .lib-phone-item {
     position: relative !important;
     left: auto !important;
