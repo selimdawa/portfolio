@@ -1096,11 +1096,11 @@
 
           <!-- Filter Buttons -->
           <ul class="kotlin-lib-filter-menu nav mb-4 justify-content-center">
-            <li class="nav-item"> <a data-lib-key="lib-1" class="nav-link active" href="#">Multi Colors</a></li>
-            <li class="nav-item"> <a data-lib-key="lib-2" class="nav-link" href="#">Multi Wave</a></li>
-            <li class="nav-item"> <a data-lib-key="lib-3" class="nav-link" href="#">Auto Image Slider</a></li>
-            <li class="nav-item"> <a data-lib-key="lib-4" class="nav-link" href="#">Bubble Bottom</a></li>
-            <li class="nav-item"> <a data-lib-key="lib-5" class="nav-link" href="#">Material Ripple Effect</a></li>
+            <li class="nav-item"> <a data-lib-key="lib-1" class="nav-link active" href="javascript:void(0);">Multi Colors</a></li>
+            <li class="nav-item"> <a data-lib-key="lib-2" class="nav-link" href="javascript:void(0);">Multi Wave</a></li>
+            <li class="nav-item"> <a data-lib-key="lib-3" class="nav-link" href="javascript:void(0);">Auto Image Slider</a></li>
+            <li class="nav-item"> <a data-lib-key="lib-4" class="nav-link" href="javascript:void(0);">Bubble Bottom</a></li>
+            <li class="nav-item"> <a data-lib-key="lib-5" class="nav-link" href="javascript:void(0);">Material Ripple Effect</a></li>
           </ul>
 
           <!-- Single Card Template Container -->
@@ -1155,7 +1155,7 @@
                 </div>
                 <!-- Right Phone Mockup Column -->
                 <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center lib-phones-wrapper">
-                  <div class="phone-mockup lib-phone-item mr-3">
+                  <div class="phone-mockup lib-phone-item">
                     <img id="lib-img-1" src="https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/4.jpg" alt="Preview 1" />
                   </div>
                   <div class="phone-mockup lib-phone-item">
@@ -1180,7 +1180,7 @@
               githubUrl: 'https://github.com/selimdawa/MultiColors',
               lightImage1: 'https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/1.jpg',
               darkImage1: 'https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/4.jpg',
-              lightImage2: 'https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/2.jpg',
+              lightImage2: 'https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/6.gif',
               darkImage2: 'https://raw.githubusercontent.com/selimdawa/MultiColors/main/UI/3.gif'
             },
             'lib-2': {
@@ -1192,7 +1192,7 @@
               githubUrl: 'https://github.com/selimdawa/MultiWave',
               lightImage1: 'https://raw.githubusercontent.com/selimdawa/MultiWave/main/UI/1.jpg',
               darkImage1: 'https://raw.githubusercontent.com/selimdawa/MultiWave/main/UI/4.jpg',
-              lightImage2: 'https://raw.githubusercontent.com/selimdawa/MultiWave/main/UI/2.jpg',
+              lightImage2: 'https://raw.githubusercontent.com/selimdawa/MultiWave/main/UI/6.gif',
               darkImage2: 'https://raw.githubusercontent.com/selimdawa/MultiWave/main/UI/3.gif'
             },
             'lib-3': {
@@ -1204,7 +1204,7 @@
               githubUrl: 'https://github.com/selimdawa/AutoImageSlider',
               lightImage1: 'https://raw.githubusercontent.com/selimdawa/AutoImageSlider/main/UI/1.jpg',
               darkImage1: 'https://raw.githubusercontent.com/selimdawa/AutoImageSlider/main/UI/4.jpg',
-              lightImage2: 'https://raw.githubusercontent.com/selimdawa/AutoImageSlider/main/UI/2.jpg',
+              lightImage2: 'https://raw.githubusercontent.com/selimdawa/AutoImageSlider/main/UI/6.gif',
               darkImage2: 'https://raw.githubusercontent.com/selimdawa/AutoImageSlider/main/UI/3.gif'
             },
             'lib-4': {
@@ -1216,7 +1216,7 @@
               githubUrl: 'https://github.com/selimdawa/BubbleBottom',
               lightImage1: 'https://raw.githubusercontent.com/selimdawa/BubbleBottom/main/UI/1.jpg',
               darkImage1: 'https://raw.githubusercontent.com/selimdawa/BubbleBottom/main/UI/4.jpg',
-              lightImage2: 'https://raw.githubusercontent.com/selimdawa/BubbleBottom/main/UI/2.jpg',
+              lightImage2: 'https://raw.githubusercontent.com/selimdawa/BubbleBottom/main/UI/6.gif',
               darkImage2: 'https://raw.githubusercontent.com/selimdawa/BubbleBottom/main/UI/3.gif'
             },
             'lib-5': {
@@ -1228,7 +1228,7 @@
               githubUrl: 'https://github.com/selimdawa/MaterialRippleEffect',
               lightImage1: 'https://raw.githubusercontent.com/selimdawa/MaterialRippleEffect/main/UI/1.jpg',
               darkImage1: 'https://raw.githubusercontent.com/selimdawa/MaterialRippleEffect/main/UI/4.jpg',
-              lightImage2: 'https://raw.githubusercontent.com/selimdawa/MaterialRippleEffect/main/UI/2.jpg',
+              lightImage2: 'https://raw.githubusercontent.com/selimdawa/MaterialRippleEffect/main/UI/6.gif',
               darkImage2: 'https://raw.githubusercontent.com/selimdawa/MaterialRippleEffect/main/UI/3.gif'
             }
           };
@@ -1238,16 +1238,18 @@
           function updateLibImages() {
             var data = kotlinLibrariesData[currentLibKey];
             if (data) {
-              var isLight = jQuery('body').hasClass('light-mode');
+              var isLight = jQuery('body').hasClass('light-mode') || jQuery('html').hasClass('light-mode');
               jQuery('#lib-img-1').attr('src', isLight ? data.lightImage1 : data.darkImage1);
               jQuery('#lib-img-2').attr('src', isLight ? data.lightImage2 : data.darkImage2);
             }
           }
 
-          jQuery(document).on('click', '#theme-toggle-btn', function() {
+          jQuery(document).on('click', '#theme-toggle-btn, .theme-toggle', function() {
+            setTimeout(updateLibImages, 50);
             setTimeout(updateLibImages, 150);
+            setTimeout(updateLibImages, 300);
+            setTimeout(updateLibImages, 500);
           });
-          };
 
           function initCopyButtons() {
             jQuery(document).off('click', '.copy-code-btn').on('click', '.copy-code-btn', function(e) {
@@ -1294,26 +1296,30 @@
 
           function initKotlinLibFilter() {
             initCopyButtons();
+            updateLibImages();
             var $links = jQuery('.kotlin-lib-filter-menu .nav-link');
             $links.off('click').on('click', function(e) {
-              e.preventDefault();
-              e.stopPropagation();
+              if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+              }
               $links.removeClass('active');
               jQuery(this).addClass('active');
               var libKey = jQuery(this).attr('data-lib-key');
+              currentLibKey = libKey;
               var data = kotlinLibrariesData[libKey];
               if (data) {
                 var $card = jQuery('#kotlin-lib-card');
                 $card.fadeOut(150, function() {
-                  jQuery('#lib-badge').text(data.badge).css({'background-color': 'var(--primary-color)', 'color': '#ffffff'});
+                  jQuery('#lib-badge').text(data.badge);
                   jQuery('#lib-desc').text(data.description);
                   jQuery('#lib-gradle-code').html(data.gradleCode);
                   jQuery('#lib-catalog-code').html(data.catalogCode);
                   jQuery('#lib-play-link').attr('href', data.playUrl);
                   jQuery('#lib-github-link').attr('href', data.githubUrl);
                   jQuery('#lib-detail-link').attr('href', data.githubUrl);
-                  jQuery('#lib-img-1').attr('src', data.image1);
-                  jQuery('#lib-img-2').attr('src', data.image2);
+                  updateLibImages();
                   $card.fadeIn(150);
                 });
               }
